@@ -7,7 +7,7 @@ export default {
        <li :class="email.isRead ? '' : 'unread' ">
          
          <email-select :email="email"></email-select>         
-         <router-link :to="'/email/' + email.id"  :email="email" >
+         <router-link :to="'/email/m/ ' + email.id"  :email="email" >
       
            <div class="col col-2">
          <div class="title subject">{{email.subject}}</span></div>
