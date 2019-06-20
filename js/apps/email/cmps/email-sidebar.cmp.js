@@ -7,6 +7,7 @@ export default {
     <div class="nano-content">
       <div class="logo-container"><span class="logo glyphicon glyphicon-envelope"></span>Mail</div><a
         class="compose-button">Compose</a>
+        
       <menu class="menu-segment">
         <ul>
           <li class="active"><a href="#">Inbox<span> (43)</span></a></li>
@@ -16,6 +17,8 @@ export default {
           <li><a href="#">Trash</a></li>
         </ul>
       </menu>
+
+
       <div class="separator"></div>
       <div class="menu-segment">
         <ul class="labels">

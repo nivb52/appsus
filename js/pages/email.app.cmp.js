@@ -54,7 +54,13 @@ export default {
     computed: {
         emailsToShow() {
 
-            if (!this.filter) return emails
+            // if (!this.filter) return this.emails.filter(email => {
+            //     return email.folder === //HERE WE WILL USE PARAMS
+            // })
+
+            if (!this.filter) return this.emails.filter(email => {
+                return email.isTrash === false
+            })
 
             return this.emails.filter(email => {
                 return email.subject.toLowerCase().includes(this.filter.toLowerCase()) || email.from.toLowerCase().includes(this.filter.toLowerCase())

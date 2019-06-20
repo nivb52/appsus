@@ -15,7 +15,7 @@ export default {
 
             <span class="star-toggle glyphicon glyphicon-star-empty">
             </span>
-            <span @click="onTrash">§T</span>
+            <span @click="onTrash" class="glyphicon glyphicon-trash"></span>
               
         </div>
     
@@ -24,8 +24,9 @@ export default {
     props: ['email'],
     methods: {
         onTrash() {
-            this.email.onTrash = true
-            console.log('email moved to trash');
+            this.email.isTrash = true
+            this.email.folder = 'trash'
+            console.log('email moved to trash', this.email);
 
         }
     },
