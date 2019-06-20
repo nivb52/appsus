@@ -1,25 +1,24 @@
-import bookHeader from './cmps/header.app.cmp.js'
-import routes from './routes.js';
+'use strict'
 
-const router = new VueRouter({ routes })
+import theRoutes from './routes.js'
+import appHeader from './app.header.cmp.js'
+
+const myRouter = new VueRouter({ routes: theRoutes })
 
 var app = new Vue({
     el: '#app',
+    created() {
+        console.log('App has been Created!');
+    },
     template: `
-    <div>
-       <book-header></book-header>
-       <!-- <router-view></router-view> -->
-       <!-- <footer>Tshompyrights 2019</footer> -->
-    </div>
+        <div>
+            <app-header></app-header>
+            <router-view></router-view>
+            <footer>Niv & Tamir rights reserved 2019</footer>
+        </div>
     `,
-    mounted() {
-        console.log('Vue is almost happy !');
-    },
-    router,
-
     components: {
-        // bookHeader,
-
+        appHeader
     },
-    // router: myRouter
+    router: myRouter
 })

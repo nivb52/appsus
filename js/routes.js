@@ -1,12 +1,11 @@
-// import bookDetailsCmp from "./cmps/book-details.cmp.js";
-// import bookAppCmp from "./pages/book.app.cmp.js";
-// import about from "./pages/about.cmp.js";
-//testing
-export default [
-    // { path: '/', component: bookAppCmp },
-    // { path: '/about', component: about },
-    // { path: '/book', component: bookDetailsCmp },
-    // { path: '/book/', component: bookDetailsCmp },
-    // {path: '/', component: main},
+import homepageCmp from './pages/hompage.cmp.js';
+import aboutCmp from './pages/about.cmp.js';
+// import emailApp from './pages/email.app.cmp.js';
+// import keepApp from './pages/keep-app.cmp.js';
 
+export default [
+    { path: '/', component: homepageCmp },
+    { path: '/about', component: aboutCmp },
+    // { path: '/email', component: emailApp },
+    // { path: '/keep', component: keepApp },
 ]
