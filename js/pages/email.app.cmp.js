@@ -13,9 +13,19 @@ export default {
     name: 'email-app',
     template: `
     <section>
-        <h1> email App </h1>
-         <email-sidebar></email-sidebar>
-         <main id="main">
+        
+        <email-sidebar></email-sidebar>
+        <main id="main">
+        <div class="overlay"></div>
+        <header class="header">
+             <div class="search-box">
+                 <input placeholder="Search..."><span class="icon glyphicon glyphicon-search"></span>
+            </div>
+            <h1 class="page-title"><a class="sidebar-toggle-btn trigger-toggle-sidebar"><span class="line"></span><span
+            class="line"></span><span class="line"></span><span class="line line-angle1"></span><span
+            class="line line-angle2"></span></a>Inbox<a><span class="icon glyphicon glyphicon-chevron-down"></span></a>
+            </h1>
+    </header>
          <!-- <div class="overlay"></div> -->
 <!--     
     <email-filter @filtered="onFilter" >    </email-filter> 
