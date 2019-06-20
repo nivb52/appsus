@@ -11,7 +11,7 @@ export const emailService = {
 }
 const EMAIL_KEY = 'email'
 
-var emailDB = [
+var emailsDB = [
     {
         "id": "O2e2G8w0skc",
         "title": "Randy, me (5)",
@@ -332,37 +332,39 @@ var emailDB = [
 
 ]
 
-// function query() {
-//     var books = booksDB //
-//     if (!books) {
-//         books = storageService.load(BOOKS_KEY)
-//         if (!books) {
-//             books = _generateBooks()
-//             storageService.store(BOOKS_KEY, books)
-//         }
-//     } else booksDB = books
-//     return booksDB
-// }
+function query() {
+    var emails = emailsDB     //
+    if (!emails) {
+        emails = storageService.load(BOOKS_KEY)
+        if (!emails) {
+            emails = _generatEmails()
+            storageService.store(BOOKS_KEY, emails)
+        }
+    } else emailsDB = emails
+    return emailsDB
+}
+
+function _generatEmails() {
+    var emails = []
+    for (let index = 0; index < 20; index++) {
+        var email = _createEmail()
+        emails.push(email)
+
+    }
+    return emails;
+}
+
+function _createEmail() {
+    var book = {
+        id: utilService.makeId(),
+        title: utilService.makeLorem(10),
+        sentAt: 1987, //TODO: get random date
+        body: utilService.getRandomInt(1900, 2000),
+        isRead: Math.random() > 0.3 ? true : false
 
 
+    }
+    return email
+}
 
-// function _generateBooks() {
-//     var books = []
-//     for (let index = 0; index < 20; index++) {
-//         var book = _createBook()
-//         books.push(book)
 
-//     }
-//     return books;
-// }
-
-// function _createBook() {
-//     var imgBaseUrl = 'http://coding-academy.org/books-photos/'
-//     var book = {
-//         id: utilService.makeId(),
-//         title: utilService.makeLorem(10),
-//         sentAt: utilService.getRandomInt(1900, 2000),
-//         thumbnail: imgBaseUrl + utilService.getRandomInt(1, 21) + '.jpg',
-//     }
-//     return book
-// }
