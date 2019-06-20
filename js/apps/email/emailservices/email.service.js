@@ -22,9 +22,9 @@ var emailsDB = [
     for notifications about board activity, invites, as well as account related tasks (like password
     retrieval).`,
         "isRead": true,
-        "categories": [
-            "Work",
-            "Hack"
+        "labels": [
+            "work",
+            "marketing"
         ],
 
     },
@@ -33,17 +33,17 @@ var emailsDB = [
         "subject": "Lucas Kriebel (via Twitter)",
         "from": "Eli",
         "sentAt": 1999,
-        "body": "placerat nisi sodales suscipit tellus tincidunt mauris elit sit luctus interdum ad dictum platea vehicula conubia fermentum habitasse congue suspendisse",
+        "body": "Off on Thursday >Eff that place, you might as well stay here with us instead! Sent from my iPhone 4 & gt; 4 mar 2014 at 5: 55 pm",
         "isRead": true,
-        "categories": [
-            "Work",
-            "Hack"
+        "labels": [
+            "work",
+            "marketing"
         ],
 
     },
     {
         "id": "JYOJa2NpSCq",
-        "subject": "lorem euismod dictumst inceptos mi",
+        "subject": "Asaf is following you",
         "from":
             "Barbara Cartland"
         ,
@@ -52,25 +52,25 @@ var emailsDB = [
     Do you remember the video you showed me of your train ride between Colombo and Kandy? The one with the
     mountain view? I would love to see that one again!`,
         "isRead": true,
-        "categories": [
-            "Work",
-            "Hack"
+        "labels": [
+            "work",
+            "marketing"
         ],
 
     },
 
     {
         "id": "1y0Oqts35DQ",
-        "subject": "gravida libero facilisis rhoncus urna etiam",
+        "subject": "Your Medium Weekly email",
         "from":
-            "Andrew Zimmer"
+            "Medium"
         ,
         "sentAt": 1999,
-        "body": "lorem molestie ut euismod ad quis mi ultricies nisl cursus suspendisse dui tempor sit suscipit metus etiam euismod tortor sagittis habitant",
+        "body": "This Week's Top Stories Our top pick for you on Medium this week The Man Who Destroyed America’s Ego",
         "isRead": true,
-        "categories": [
-            "Work",
-            "Hack"
+        "labels": [
+            "work",
+            "marketing"
         ],
 
     },
@@ -81,207 +81,207 @@ var emailsDB = [
             "Danielle Steel"
         ,
         "sentAt": 1978,
-        "body": `Mochila Beta: Subscription Confirmed &nbsp;&ndash;&nbsp;  You've
+        "body": `Mochila Beta: Subscription Confirmed You've
     been confirmed! Welcome to the ruling class of the inbox. For your records, here is a copy of the
     information you submitted to us...`,
         "isRead": false,
-        "categories": [
-            "Work",
-            "Hack"
+        "labels": [
+            "work",
+            "marketing"
         ],
 
     },
     {
         "id": "f4iuVmbuKCC",
-        "subject": "interdum per habitasse luctus purus est",
+        "subject": "Why work had when you can get those photos free",
         "from":
             "Dr. Seuss"
         ,
         "sentAt": 2011,
-        "body": "et vehicula faucibus amet accumsan lectus cras nulla cubilia arcu neque litora mi habitasse quis amet augue facilisis sed",
+        "body": "Montly High-Res Photos To create this month's pack, we hosted a party with local musician Jared Mahone here in Columbus, Ohio.",
         "isRead": false,
-        "categories": [
-            "Work",
-            "Hack"
+        "labels": [
+            "work",
+            "marketing"
         ],
 
     },
     {
         "id": "U2rfZO6oBZf",
-        "subject": "Infinity HR",
+        "subject": "Infinity Revibe on HR",
         "from":
             "Leo Tolstoy"
         ,
         "sentAt": 1978,
-        "body": "senectus habitant nam imperdiet nostra elit dapibus nisl adipiscing in",
+        "body": "thought maybe you want some music inspiration for the weekend. Here are some trending tracks and playlists we think you should give a listen! habitant nam imperdiet nostra elit dapibus nisl adipiscing in",
         "isRead": false,
-        "categories": [
-            "Work",
-            "Hack"
+        "labels": [
+            "work",
+            "marketing"
         ],
 
     },
     {
         "id": "xI0wrXaaAcq",
-        "subject": "leo tortor per dapibus mattis ut conubia porttitor ligula viverra",
+        "subject": "Apple stocks is just raising - here what Warn Buffet has to say",
         "from":
-            "Leo Tolstoy"
+            "Stocks.com"
         ,
         "sentAt": 2011,
         "body": "nec scelerisque id cursus platea sit ullamcorper bibendum ultrices tempus ante mi aliquet cras tortor dapibus dictum scelerisque",
         "isRead": true,
-        "categories": [
-            "Work",
-            "Hack"
+        "labels": [
+            "work",
+            "marketing"
         ],
 
     },
     {
         "id": "9laHCEdSpFy",
-        "subject": "consectetur a eu tincidunt condimentum amet nisi",
+        "subject": "Can you send me your new app version",
         "from":
-            "Dr. Seuss"
+            "Dr. Aviad"
         ,
         "sentAt": 1999,
-        "body": "magna quisque venenatis laoreet purus in semper habitant proin pellentesque sed egestas cursus faucibus nam enim id sit mi ligula risus curabitur senectus curabitur sodales fames sem",
+        "body": "I am willing to accept your offer for the new ap build, with the price you offered, magna quisque venenatis laoreet purus in semper habitant proin pellentesque sed egestas cursus faucibus nam enim id sit mi ligula risus curabitur senectus curabitur sodales fames sem",
         "isRead": true,
-        "categories": [
-            "Work",
-            "Hack"
+        "labels": [
+            "work",
+            "marketing"
         ],
 
     },
     {
         "id": "nGhVwZvGCGp",
-        "subject": "sem vestibulum semper convallis pharetra tempor himenaeos ut",
+        "subject": "שופרסל Online - הזמנתך נקלטה - ניצור עימך קשר בתוך שעתיים",
         "from":
-            "Jin Yong"
+            "Shupersal Online"
         ,
         "sentAt": 2011,
         "body": "porttitor nisl sodales id eu tellus venenatis laoreet auctor dictumst nulla",
         "isRead": true,
-        "categories": [
-            "Work",
-            "Hack"
+        "labels": [
+            "work",
+            "marketing"
         ],
 
     },
     {
         "id": "Q8Q9Lsd03BD",
-        "subject": "vel quis taciti fermentum feugiat ullamcorper curae praesent",
+        "subject": "Regarding our meeting - Erik, me (5)",
         "from":
-            "Dr. Seuss"
+            "John"
         ,
         "sentAt": 1978,
         "body": "curabitur bibendum in dolor neque magna phasellus arcu nulla cubilia senectus maecenas ullamcorper neque accumsan facilisis dictumst ornare",
         "isRead": true,
-        "categories": [
-            "Work",
-            "Hack"
+        "labels": [
+            "work",
+            "marketing"
         ],
 
     },
     {
         "id": "bd7a76kARao",
-        "subject": "pretium bibendum pharetra curabitur quisque dictumst",
+        "subject": "It is not possible ",
         "from":
             "Danielle Steel"
         ,
         "sentAt": 2018,
-        "body": "auctor amet nostra luctus molestie proin platea cubilia netus sed purus egestas a primis eu tristique interdum litora lorem venenatis mattis senectus",
+        "body": "Task assigned: Clone ARP's website You have been assigned a task by Alex@Work on the board Web.",
         "isRead": true,
-        "categories": [
-            "Work",
-            "Hack"
+        "labels": [
+            "work",
+            "marketing"
         ],
 
     },
     {
         "id": "qKyG0vqeO3e",
-        "subject": "velit sapien eget tincidunt nunc tortor",
+        "subject": "we will have to postpone our meeting",
         "from":
-            "Danielle Steel"
+            "Emi Nave"
         ,
         "sentAt": 2018,
         "body": "aenean mauris porta netus accumsan turpis etiam vestibulum vivamus sagittis nullam nec tellus quam mattis est pellentesque nisi litora sit ad",
         "isRead": false,
-        "categories": [
-            "Work",
-            "Hack"
+        "labels": [
+            "work",
+            "marketing"
         ],
     },
     {
         "id": "2RvT48ZNInj",
-        "subject": "etiam primis proin praesent placerat nisi fermentum nisi",
+        "subject": "Let's go fishing!",
         "from":
             "Agatha Christie"
         ,
         "sentAt": 2011,
-        "body": "nec faucibus arcu suspendisse tempus potenti lobortis aliquam quisque augue integer consectetur etiam ultrices curabitur tristique metus",
+        "body": " Hi, what do you say,  at the lake tomorrow? It'll be awesome. nec faucibus arcu suspendisse tempus potenti lobortis aliquam quisque augue integer consectetur etiam ultrices curabitur tristique metus",
         "isRead": true,
-        "categories": [
-            "Work",
-            "Hack"
+        "labels": [
+            "work",
+            "marketing"
         ],
 
     },
     {
         "id": "5z2s9pDXAYj",
-        "subject": "ut placerat eu dapibus sapien sodales laoreet",
+        "subject": "1 new items in your Stackexchange inbox",
         "from":
-            "Danielle Steel"
+            "Stack Exchange"
         ,
         "sentAt": 1999,
-        "body": "etiam nec aliquam euismod platea vel laoreet quisque condimentum sapien neque ut aliquam torquent in nam",
+        "body": "following items were added to your Stack Exchange global inbox since you last checked it .etiam nec aliquam euismod platea vel laoreet quisque condimentum sapien neque ut aliquam torquent in nam",
         "isRead": true,
-        "categories": [
-            "Work",
-            "Hack"
+        "labels": [
+            "work",
+            "marketing"
         ],
 
     },
     {
         "id": "zBZu5cDEWha",
-        "subject": "suscipit turpis etiam turpis libero lobortis",
+        "subject": "You can now use your storage in Google Drive for Whatsapp photos",
         "from":
-            "Jin Yong"
+            "Google Drive Team"
         ,
         "sentAt": 2011,
-        "body": "etiam pretium urna fusce lobortis curae viverra aptent metus semper nisi litora feugiat elementum purus nunc consequat lorem ultricies non primis phasellus sociosqu donec dolor",
+        "body": "Hey Nicklas Sandell! Thank you for purchasing extra storage space in Google. etiam pretium urna fusce lobortis curae viverra aptent metus semper nisi litora feugiat elementum purus nunc consequat lorem ultricies non primis phasellus sociosqu donec dolor",
         "isRead": true,
-        "categories": [
-            "Work",
-            "Hack"
+        "labels": [
+            "work",
+            "marketing"
         ],
 
     },
     {
         "id": "aOI7tQuPZ2f",
-        "subject": "neque eu purus euismod placerat adipiscing odio egestas consequat",
+        "subject": " no subject",
         "from":
-            "Leo Tolstoy"
+            "me, Susanna (11)"
         ,
         "sentAt": 2011,
-        "body": "dolor morbi malesuada eleifend purus taciti sit interdum aliquet commodo ut libero tincidunt",
+        "body": "Yes ok, great! I'm not stuck in Stockholm anymore, we're making progress., dolor morbi malesuada eleifend purus taciti sit interdum aliquet commodo ut libero tincidunt",
         "isRead": false,
-        "categories": [
-            "Work",
-            "Hack"
+        "labels": [
+            "work",
+            "marketing"
         ],
 
     },
     {
         "id": "WBooB82Uvwu",
-        "subject": "elit enim ultricies amet imperdiet a molestie class elementum venenatis",
+        "subject": "Yes we can",
         "from":
-            "Danielle Steel"
+            "Yaron Bit"
         ,
         "sentAt": 1999,
-        "body": "rhoncus odio netus consectetur aenean hendrerit massa scelerisque elementum aptent lobortis pharetra maecenas quam nulla volutpat turpis non habitasse aenean ante sodales lobortis quisque libero imperdiet gravida eleifend nulla",
+        "body": "Trip home from Colombo has been arranged, then Jenna will come get me from Stockholm. :)rhoncus odio netus consectetur aenean hendrerit massa scelerisque elementum aptent lobortis pharetra maecenas quam nulla volutpat turpis non habitasse aenean ante sodales lobortis quisque libero imperdiet gravida eleifend nulla",
         "isRead": true,
-        "categories": [
-            "Work",
-            "Hack"
+        "labels": [
+            "work",
+            "marketing"
         ],
 
     },
@@ -294,9 +294,9 @@ var emailsDB = [
         "sentAt": 1999,
         "body": "himenaeos quis iaculis orci libero egestas quam varius primis erat lacus facilisis blandit dictum tristique interdum litora quisque purus senectus pretium purus",
         "isRead": false,
-        "categories": [
-            "Work",
-            "Hack"
+        "labels": [
+            "work",
+            "marketing"
         ],
 
     },
@@ -309,9 +309,9 @@ var emailsDB = [
         "sentAt": 1978,
         "body": "torquent in et id lacus vivamus aptent cursus erat integer venenatis risus ac ante quam etiam euismod feugiat risus suscipit rhoncus pharetra quisque felis",
         "isRead": true,
-        "categories": [
-            "Work",
-            "Hack"
+        "labels": [
+            "work",
+            "marketing"
         ],
 
     },
@@ -324,9 +324,9 @@ var emailsDB = [
         "sentAt": 2011,
         "body": "aliquet euismod mi vivamus bibendum donec etiam quisque iaculis ullamcorper est sed",
         "isRead": true,
-        "categories": [
-            "Work",
-            "Hack"
+        "labels": [
+            "work",
+            "marketing"
         ],
 
     }
@@ -334,7 +334,9 @@ var emailsDB = [
 ]
 
 function query() {
+    _addImportanceAndTrashKey()
     var emails = emailsDB
+
     if (!emails) {
         emails = storageService.load(EMAIL_KEY)
         if (!emails) {
@@ -343,7 +345,7 @@ function query() {
     } else emailsDB = emails
 
     storageService.store(EMAIL_KEY, emails)
-    return emailsDB
+    return emails
 }
 
 function _generatEmails() {
@@ -363,8 +365,8 @@ function _createEmail() {
         subject: utilService.makeLorem(10),
         sentAt: _randomDate(new Date(2019, 6, 6), new Date(2019, 21, 1)),
         body: utilService.getRandomInt(1900, 2000),
-        isRead: Math.random() > 0.3 ? true : false
-
+        isRead: Math.random() > 0.3 ? true : false,
+        folder: _randomFolder(),
 
     }
     return email
@@ -385,4 +387,16 @@ function _randomName() {
 function _randomDate(start, end) {
     var date = new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
     return date
+}
+
+function _addImportanceAndTrashKey() {
+    return emailsDB.forEach(email => {
+        email.folder = Math.random() > 0.8 ? 'inbox' : 'important' //_randomFolder()
+        email.isTrash = false
+    })
+}
+
+function _randomFolder() {
+    let folders = ['sent', 'drafts', 'important', 'archive']
+    return folders[Math.floor(Math.random() * folders.length)]
 }
