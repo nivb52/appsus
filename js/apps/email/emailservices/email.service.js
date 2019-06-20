@@ -393,7 +393,7 @@ function _randomDate(start, end) {
 
 function _addSentDate_Importance_And_TrashKey() {
     return emailsDB.forEach(email => {
-        email.folder = Math.random() > 0.8 ? 'inbox' : 'important' //_randomFolder()
+        email.folder = Math.random() > 0.2 ? 'inbox' : 'important' //_randomFolder()
         email.isTrash = false
         email.sentAt = _randomDate(new Date(2019, 6, 6), new Date(2019, 21, 1))
     })

@@ -53,14 +53,13 @@ export default {
     },
     computed: {
         emailsToShow() {
-
-            // if (!this.filter) return this.emails.filter(email => {
-            //     return email.folder === //HERE WE WILL USE PARAMS
-            // })
-
-            if (!this.filter) return this.emails.filter(email => {
-                return email.isTrash === false
+            const emailFolder = this.$route.params.folder || 'inbox'
+            if (!this.filter && emailFolder) return this.emails.filter(email => {
+                return email.folder === emailFolder
             })
+
+            // simple show/no show of trash
+            // if (!this.filter) return this.emails.filter(email => { return email.isTrash === false })
 
             return this.emails.filter(email => {
                 return email.subject.toLowerCase().includes(this.filter.toLowerCase()) || email.from.toLowerCase().includes(this.filter.toLowerCase())
@@ -71,6 +70,10 @@ export default {
     },
     mounted() {
         console.log('email app is on');
+    },
+    created() {
+        const emailFolder = this.$route.params.folder
+        console.log('email folder ', emailFolder);
 
     },
 

@@ -10,5 +10,6 @@ export default {
         const emailId = this.$route.params.id
         console.log('email id ', emailId);
 
-    }
+    },
+    // props: ['email']
 }

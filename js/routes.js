@@ -8,6 +8,7 @@ export default [
     { path: '/', component: homepageCmp },
     { path: '/about', component: aboutCmp },
     { path: '/email', component: emailApp },
+    { path: '/email/:folder', component: emailApp },
     { path: '/email/:id', component: emailDetails },
     // { path: '/keep', component: keepApp },
 ]
