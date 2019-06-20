@@ -1,28 +1,22 @@
-
+import emailSelect from './email-select.cmp.js'
 
 export default {
   name: 'email-preview',
   template: `
 
        <li :class="email.isRead ? '' : 'unread' ">
-            <div class="col col-1"><span class="dot"></span>
-              <div class="checkbox-wrapper">
-                <input type="checkbox" id="chk1">
-                <label for="chk1" class="toggle"></label>
-              </div>
-
-              <p class="title max-width">{{email.from}}</p>
-               <span
-                class="star-toggle glyphicon glyphicon-star-empty">
-              </span>
-
+         
+         <email-select :email="email"></email-select>         
+         <router-link :to="'/email/' + email.id"  :email="email" >
+      
+           <div class="col col-2">
+         <div class="title subject">{{email.subject}}</span></div>
+         <div class="subject">{{emailBody}}</span></div>
+         <div class="date">11:49 am</div>
+              
+              
             </div>
-
-            <div class="col col-2">
-              <div class="title subject">{{email.subject}}</span></div>
-              <div class="subject">{{emailBody}}</span></div>
-              <div class="date">11:49 am</div>
-            </div>
+          </router-link>
           </li>
 
 
@@ -36,6 +30,10 @@ export default {
       return this.email.body.substring(1, 30)
     }
   },
+
+  components: {
+    emailSelect
+  }
 
 
 
