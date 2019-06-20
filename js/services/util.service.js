@@ -1,7 +1,8 @@
 export const utilService = {
     getRandomInt,
     makeLorem,
-    makeId
+    makeId,
+    getItemById
 }
 
 function getRandomInt(min, max) {
@@ -10,7 +11,13 @@ function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
 }
 
-function makeId(length=5) {
+function getItemById(itemId, items) {
+    return items.findIndex(function (item) {
+        return itemId === item.id
+    })
+}
+
+function makeId(length = 5) {
     var text = '';
     var possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
 

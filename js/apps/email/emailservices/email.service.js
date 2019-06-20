@@ -387,6 +387,8 @@ function _randomName() {
 function _randomDate(start, end) {
     var date = new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
     return date
+    /// WE NEED TO GET IT THIS FORM: 155550515515
+    //utilService.getRandomInt(Date.now(), Date.now() - 10000000)
 }
 
 function _addSentDate_Importance_And_TrashKey() {
@@ -401,4 +403,5 @@ function _randomFolder() {
     let folders = ['sent', 'drafts', 'important', 'archive']
     return folders[Math.floor(Math.random() * folders.length)]
 }
+
 
