@@ -1,5 +1,6 @@
 import { emailService } from '../apps/email/emailservices/email.service.js'
 import emailList from '../apps/email/cmps/email-list.cmp.js'
+import emailSidebar from '../apps/email/cmps/email-sidebar.cmp.js'
 // import emailDetails from '../cmps/email-details.cmp.js';
 // import emailFilter from '../cmps/email-filter.cmp.js';
 // import eventBus from '../cmps/email-bus.cmp.js';
@@ -12,7 +13,8 @@ export default {
     name: 'email-app',
     template: `
     <section>
-         <h1> email App </h1>
+        <h1> email App </h1>
+         <email-sidebar></email-sidebar>
          <main id="main">
          <!-- <div class="overlay"></div> -->
 <!--     
@@ -28,8 +30,6 @@ export default {
         return {
             emails: emails,
             filter: null,
-            filterMinPrice: null,
-            filterMaxPrice: null,
             emailIdx: null,
             isSelected: true,
             selectedEmail: null
@@ -66,6 +66,7 @@ export default {
 
     components: {
         emailList,
+        emailSidebar
         // emailDetails,
         // emailFilter,
         // eventBus

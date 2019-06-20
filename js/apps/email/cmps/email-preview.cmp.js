@@ -1,8 +1,8 @@
 
 
 export default {
-    name: 'email-preview',
-    template: `
+  name: 'email-preview',
+  template: `
 
        <li :class="email.isRead ? '' : 'unread' ">
             <div class="col col-1"><span class="dot"></span>
@@ -27,10 +27,10 @@ export default {
 
 
 `,
-    props: ['email'],
-    mounted() {
+  props: ['email'],
+  mounted() {
 
-    },
+  },
 
 
 
