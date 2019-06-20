@@ -1,6 +1,7 @@
 import { emailService } from '../apps/email/emailservices/email.service.js'
 import emailList from '../apps/email/cmps/email-list.cmp.js'
 import emailSidebar from '../apps/email/cmps/email-sidebar.cmp.js'
+import emailFilter from '../apps/email/cmps/email-filter.cmp.js'
 // import emailDetails from '../cmps/email-details.cmp.js';
 // import emailFilter from '../cmps/email-filter.cmp.js';
 // import eventBus from '../cmps/email-bus.cmp.js';
@@ -12,29 +13,34 @@ var emails = emailService.query()
 export default {
     name: 'email-app',
     template: `
-    <section>
+<section>
         
         <email-sidebar></email-sidebar>
+
         <main id="main">
         <div class="overlay"></div>
-        <header class="header">
-             <div class="search-box">
-                 <input placeholder="Search..."><span class="icon glyphicon glyphicon-search"></span>
-            </div>
+     <header class="header">
+             
+            <email-filter @set-filter="setFilter"></email-filter>
+
             <h1 class="page-title"><a class="sidebar-toggle-btn trigger-toggle-sidebar"><span class="line"></span><span
             class="line"></span><span class="line"></span><span class="line line-angle1"></span><span
             class="line line-angle2"></span></a>Inbox<a><span class="icon glyphicon glyphicon-chevron-down"></span></a>
             </h1>
+
     </header>
-         <!-- <div class="overlay"></div> -->
-<!--     
-    <email-filter @filtered="onFilter" >    </email-filter> 
-    <email-list v-if="isSelected" @selected-email="showAndGetDetails" :emails = emailsToShow ></email-list>
-<
-    <email-details v-if="!isSelected" :email="selectedemail"></email-details> -->
-    <email-list :emails="emails"></email-list>
+
+
+        <email-list :emails="emailsToShow" ></email-list>
+
+<!-- v-if="isSelected" @selected-email="showAndGetDetails"  -->
+
+         <email-details v-if="!isSelected" :email="selectedemail"></email-details>
+
+
+
     </main>
-    </section>
+</section>
     `,
     data() {
         return {
@@ -48,11 +54,10 @@ export default {
     computed: {
         emailsToShow() {
 
-            /*TODO :add filter with price also in this function or other and this will be the manager function*/
+            if (!this.filter) return emails
 
-            if (!this.filter) return this.emails
             return this.emails.filter(email => {
-                return email.title.includes(this.filter)
+                return email.subject.toLowerCase().includes(this.filter.toLowerCase()) || email.from.toLowerCase().includes(this.filter.toLowerCase())
             })
 
 
@@ -64,8 +69,8 @@ export default {
     },
 
     methods: {
-        onFilter(theFilter) {
-            this.filter = theFilter
+        setFilter(filter) {
+            this.filter = filter.string
         },
 
         showAndGetDetails(email) {
@@ -76,9 +81,9 @@ export default {
 
     components: {
         emailList,
-        emailSidebar
+        emailSidebar,
+        emailFilter,
         // emailDetails,
-        // emailFilter,
         // eventBus
 
     },

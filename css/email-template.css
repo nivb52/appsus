@@ -530,7 +530,7 @@ a:hover {
 }
 
 #main .message-list li .col-1 {
-  width: 400px;
+  width: 30%;
 }
 
 #main .message-list li .col-1 .star-toggle, #main .message-list li .col-1 .checkbox-wrapper, #main .message-list li .col-1 .dot {
@@ -570,9 +570,9 @@ a:hover {
 #main .message-list li .col-2 {
   position: absolute;
   top: 0;
-  left: 400px;
   right: 0;
   bottom: 0;
+  width: 60%;
 }
 
 #main .message-list li .col-2 .subject, #main .message-list li .col-2 .date {

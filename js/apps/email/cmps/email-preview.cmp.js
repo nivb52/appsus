@@ -11,7 +11,7 @@ export default {
                 <label for="chk1" class="toggle"></label>
               </div>
 
-              <p class="title">{{email.from}}</p>
+              <p class="title max-width">{{email.from}}</p>
                <span
                 class="star-toggle glyphicon glyphicon-star-empty">
               </span>
@@ -20,7 +20,7 @@ export default {
 
             <div class="col col-2">
               <div class="title subject">{{email.subject}}</span></div>
-              <div >{{email.body}}</span></div>
+              <div class="subject">{{emailBody}}</span></div>
               <div class="date">11:49 am</div>
             </div>
           </li>
@@ -30,6 +30,11 @@ export default {
   props: ['email'],
   mounted() {
 
+  },
+  computed: {
+    emailBody() {
+      return this.email.body.substring(1, 30)
+    }
   },
 
 
