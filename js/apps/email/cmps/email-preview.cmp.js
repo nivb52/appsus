@@ -12,7 +12,7 @@ export default {
            <div class="col col-2">
          <div class="title subject">{{email.subject}}</span></div>
          <div class="subject">{{emailBody}}</span></div>
-         <div class="date">11:49 am</div>
+         <div class="date">{{emailDate}}</div>
               
               
             </div>
@@ -28,6 +28,10 @@ export default {
   computed: {
     emailBody() {
       return this.email.body.substring(1, 30)
+    },
+    emailDate() {
+      let sentDate = (this.email.sentAt).toDateString()
+      return sentDate
     }
   },
 

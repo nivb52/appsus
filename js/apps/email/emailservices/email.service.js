@@ -334,7 +334,7 @@ var emailsDB = [
 ]
 
 function query() {
-    _addImportanceAndTrashKey()
+    _addSentDate_Importance_And_TrashKey()
     var emails = emailsDB
 
     if (!emails) {
@@ -363,7 +363,7 @@ function _createEmail() {
         id: utilService.makeId(),
         from: _randomName(),
         subject: utilService.makeLorem(10),
-        sentAt: _randomDate(new Date(2019, 6, 6), new Date(2019, 21, 1)),
+        sentAt: _randomDate(new Date(2019, 6, 6), new Date(2019, 1, 21)),
         body: utilService.getRandomInt(1900, 2000),
         isRead: Math.random() > 0.3 ? true : false,
         folder: _randomFolder(),
@@ -389,10 +389,11 @@ function _randomDate(start, end) {
     return date
 }
 
-function _addImportanceAndTrashKey() {
+function _addSentDate_Importance_And_TrashKey() {
     return emailsDB.forEach(email => {
         email.folder = Math.random() > 0.8 ? 'inbox' : 'important' //_randomFolder()
         email.isTrash = false
+        email.sentAt = _randomDate(new Date(2019, 6, 6), new Date(2019, 21, 1))
     })
 }
 
@@ -400,3 +401,4 @@ function _randomFolder() {
     let folders = ['sent', 'drafts', 'important', 'archive']
     return folders[Math.floor(Math.random() * folders.length)]
 }
+
