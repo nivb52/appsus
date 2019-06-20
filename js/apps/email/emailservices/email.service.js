@@ -357,8 +357,9 @@ function _generatEmails() {
 function _createEmail() {
     var email = {
         id: utilService.makeId(),
+        from: _randomName(),
         title: utilService.makeLorem(10),
-        sentAt: 1987, //TODO: get random date
+        sentAt: _randomDate(new Date(2019, 6, 6), new Date(2019, 21, 1)),
         body: utilService.getRandomInt(1900, 2000),
         isRead: Math.random() > 0.3 ? true : false
 
@@ -368,3 +369,18 @@ function _createEmail() {
 }
 
 
+function _randomName() {
+    var namesFirst = ['Michael', 'Paula', 'Antonio', 'Mary', 'Martin', 'Amos', 'Oren', 'Maor']
+    var namesLast = ['Holz', 'Wilson', 'Moreno', 'Saveley', 'Sommer', 'Oz', 'Ram', 'Alon']
+
+    var len = namesFirst.length
+    var numA = Math.floor(Math.random() * len)
+    var numB = Math.floor(Math.random() * len)
+    return namesFirst[numA] + ' ' + namesLast[numB]
+}
+
+
+function _randomDate(start, end) {
+    var date = new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
+    return date
+}
