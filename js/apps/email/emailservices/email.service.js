@@ -3,8 +3,8 @@
 • Has a computed property  ToShow that returns books based on the current filter
 */
 
-import { storageService } from '../../../services/storage.service.js
-import { utilService } from '../../../services/util.service.js
+import { storageService } from '../../../services/storage.service.js'
+import { utilService } from '../../../services/util.service.js'
 
 export const emailService = {
     query
