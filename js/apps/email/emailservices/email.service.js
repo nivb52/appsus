@@ -355,7 +355,7 @@ function _generatEmails() {
 }
 
 function _createEmail() {
-    var book = {
+    var email = {
         id: utilService.makeId(),
         title: utilService.makeLorem(10),
         sentAt: 1987, //TODO: get random date

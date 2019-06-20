@@ -1,45 +1,45 @@
-import { bookService } from '../services/book.service.js'
-import bookList from '../cmps/book-list.cmp.js'
-import bookPreview from '../cmps/book-preview.cmp.js';
-import bookDetails from '../cmps/book-details.cmp.js';
-import bookFilter from '../cmps/book-filter.cmp.js';
-import eventBus from '../cmps/book-bus.cmp.js';
+import { emailService } from '../apps/email/emailservices/email.service.js'
+// import emailList from '../cmps/email-list.cmp.js'
+// import emailPreview from '../cmps/email-preview.cmp.js';
+// import emailDetails from '../cmps/email-details.cmp.js';
+// import emailFilter from '../cmps/email-filter.cmp.js';
+// import eventBus from '../cmps/email-bus.cmp.js';
 
-var books = bookService.query()
+var emails = emailService.query()
 
 /*works: 
 */
 export default {
     template: `
     <section>
-    <h1> Book App </h1>
-    
-    <book-filter @filtered="onFilter" >    </book-filter> 
-    <book-list v-if="isSelected" @selected-book="showAndGetDetails" :books = booksToShow ></book-list>
+    <h1> email App </h1>
+<!--     
+    <email-filter @filtered="onFilter" >    </email-filter> 
+    <email-list v-if="isSelected" @selected-email="showAndGetDetails" :emails = emailsToShow ></email-list>
 
-    <book-details v-if="!isSelected" :book="selectedBook"></book-details>
+    <email-details v-if="!isSelected" :email="selectedemail"></email-details> -->
 
     </section>
     `,
     data() {
         return {
-            books: books,
+            emails: emails,
             filter: null,
             filterMinPrice: null,
             filterMaxPrice: null,
-            bookIdx: null,
+            emailIdx: null,
             isSelected: true,
-            selectedBook: null
+            selectedEmail: null
         }
     },
     computed: {
-        booksToShow() {
+        emailsToShow() {
 
             /*TODO :add filter with price also in this function or other and this will be the manager function*/
 
-            if (!this.filter) return this.books
-            return this.books.filter(book => {
-                return book.title.includes(this.filter)
+            if (!this.filter) return this.emails
+            return this.emails.filter(email => {
+                return email.title.includes(this.filter)
             })
 
 
@@ -51,18 +51,18 @@ export default {
             this.filter = theFilter
         },
 
-        showAndGetDetails(book) {
+        showAndGetDetails(email) {
             this.isSelected = false
-            this.selectedBook = book
+            this.selectedemail = email
         },
     },
 
     components: {
-        bookList,
-        bookDetails,
-        bookPreview,
-        bookFilter,
-        eventBus
+        // emailList,
+        // emailDetails,
+        // emailPreview,
+        // emailFilter,
+        // eventBus
 
     },
 }
