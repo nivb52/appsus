@@ -5,7 +5,6 @@ export default {
   template: `
 
        <li :class="email.isRead ? '' : 'unread' ">
-         
          <email-select :email="email"></email-select>         
          <router-link  :to="'/email/m/' + email.id"  :email="email" >
       

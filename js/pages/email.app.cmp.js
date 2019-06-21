@@ -33,12 +33,6 @@ export default {
 
         <email-list :emails="emailsToShow" ></email-list>
 
-<!-- v-if="isSelected" @selected-email="showAndGetDetails"  -->
-
-         <!-- <email-details v-if="!isSelected" :email="selectedemail"></email-details> -->
-
-
-
     </main>
 </section>
     `,
