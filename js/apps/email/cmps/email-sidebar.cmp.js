@@ -11,11 +11,11 @@ export default {
 
       <menu class="menu-segment">
         <ul>
-          <li class="active"><a href="#">Inbox<span> ({{inbox}})</span></a></li>
-          <li><a href="#">Important<span> ({{important}})</span></a></li>
-          <li><a href="#">sent<span> ({{sent}})</span></a></li>
-          <li><a href="#">drafts<span> ({{drafts}})</span></a></li>
-          <li><a href="#">trash<span> ({{trash}})</span></a></li>
+          <li class="active"> <router-link  :to="'/email'"> Inbox<span> ({{inbox}})</span></router-link></li>
+          <li><router-link  :to="'/email/important'"> Important<span> ({{important}})</span></router-link></li>
+          <li><router-link  :to="'/email/sent'">sent<span> ({{sent}})</span></router-link></li>
+          <li><router-link  :to="'/email/drafts'">drafts<span> ({{drafts}})</span></router-link></li>
+          <li><router-link  :to="'/email/trash'">trash<span> ({{trash}})</span></router-link></li>
         </ul>
       </menu>
 
