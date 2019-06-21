@@ -20,11 +20,10 @@ export default {
         // return emailService.queryId(emailId, 'emails')
     },
     methods: {
-        // emailDetails() {
-        // console.log();
+        emailDetails() {
 
-        // return emailService.queryId(emailId, 'emails')
-        // }
+            let x = emailService.queryId(emailId, 'emails')
+            console.log('works ', x);
+        }
     },
-
 }

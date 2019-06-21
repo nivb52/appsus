@@ -12,8 +12,9 @@ function getRandomInt(min, max) {
 }
 
 function getItemById(itemId, items) {
-    return items.findIndex(function (item) {
-        return itemId === item.id
+    let selectedItem = items.find(item => {
+        itemId === item.id
+        return (selectedItem) // Promise.resolve
     })
 }
 

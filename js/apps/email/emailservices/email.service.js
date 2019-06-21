@@ -8,9 +8,11 @@ import { utilService } from '../../../services/util.service.js'
 
 export const emailService = {
     query,
-    queryId
+    queryId,
+    countUnreadInFolder
 }
 const EMAIL_KEY = 'emails'
+const FOLDER_OPS = ['sent', 'drafts', 'important', 'archive']
 
 var emailsDB = [
     {
@@ -333,26 +335,49 @@ var emailsDB = [
     }
 
 ]
-function queryId(idx, itemsName){
+
+
+// COUNTING THE UNREAD EMAILS FOR EACH FOLDER
+function countUnreadInFolder() {
+    const emails = query()
+    var unreadPerFolder = { emails: 0 }
+    const result = emails.forEach(currEmail => {
+        if (!currEmail.isRead) {
+            let folder = currEmail.folder;
+
+            unreadPerFolder[folder] ? unreadPerFolder[folder]++ : unreadPerFolder[folder] = 1
+        }
+        return unreadPerFolder
+    })
+    return unreadPerFolder
+}
+
+
+
+
+function queryId(idx, itemsName) {
     if (itemsName.toLowerCase() === 'emails') items = storageService.load(EMAIL_KEY) || emailsDB
-    return utilService.getItemById(idx,items)
+    return utilService.getItemById(idx, items)
 }
 
 
 function query() {
-    _addSentDate_Importance_And_TrashKey()
-    var emails = emailsDB
+    var emails = storageService.load(EMAIL_KEY) || emailsDB || _generatEmails()
 
-    if (!emails) {
-        emails = storageService.load(EMAIL_KEY)
-        if (!emails) {
-            emails = _generatEmails()
-        }
-    } else emailsDB = emails
+    const cheackNewFeature = 'folder'
+    if (!emails[0][cheackNewFeature]) _addNewFeatures(emails)
 
     storageService.store(EMAIL_KEY, emails)
     return emails
 }
+
+
+
+
+
+/* ============================ */
+/* generate DB */
+/* ============================ */
 
 function _generatEmails() {
     var emails = []
@@ -369,45 +394,36 @@ function _createEmail() {
         id: utilService.makeId(),
         from: _randomName(),
         subject: utilService.makeLorem(10),
-        sentAt: _randomDate(new Date(2019, 6, 6), new Date(2019, 1, 21)),
         body: utilService.getRandomInt(1900, 2000),
         isRead: Math.random() > 0.3 ? true : false,
-        folder: _randomFolder(),
-
+        // sentAt: _randomDate(new Date(2019, 6, 6), new Date(2019, 1, 21)),
+        // folder: _randomFolder(),
+        // isImportant: Math.random() > 0.75 ? true : false,
+        // email.isTrash = false
     }
     return email
 }
 
 
-function _randomName() {
-    var namesFirst = ['Michael', 'Paula', 'Antonio', 'Mary', 'Martin', 'Amos', 'Oren', 'Maor']
-    var namesLast = ['Holz', 'Wilson', 'Moreno', 'Saveley', 'Sommer', 'Oz', 'Ram', 'Alon']
-
-    var len = namesFirst.length
-    var numA = Math.floor(Math.random() * len)
-    var numB = Math.floor(Math.random() * len)
-    return namesFirst[numA] + ' ' + namesLast[numB]
-}
-
 
 function _randomDate(start, end) {
     var date = new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
-    return date
+    return date.toDateString()
     /// WE NEED TO GET IT THIS FORM: 155550515515
     //utilService.getRandomInt(Date.now(), Date.now() - 10000000)
 }
 
-function _addSentDate_Importance_And_TrashKey() {
-    return emailsDB.forEach(email => {
-        email.folder = Math.random() > 0.2 ? 'inbox' : 'important' //_randomFolder()
-        email.isTrash = false
-        email.sentAt = _randomDate(new Date(2019, 6, 6), new Date(2019, 21, 1))
+function _addNewFeatures(emails) {
+    return emails.forEach(email => {
+        email.folder = Math.random() > 0.3 ? 'inbox' : _randomFolder();
+        email.isTrash = false;
+        email.isImportant = Math.random() > 0.75 ? true : false;
+        email.sentAt = _randomDate(new Date(2019, 1, 1), new Date(2019, 4, 4));
     })
 }
 
 function _randomFolder() {
-    let folders = ['sent', 'drafts', 'important', 'archive']
-    return folders[Math.floor(Math.random() * folders.length)]
+    let folders = FOLDER_OPS
+    return folders[Math.floor(Math.random() * folders.length - 1)]
 }
-
 

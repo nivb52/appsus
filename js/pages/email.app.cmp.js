@@ -54,13 +54,19 @@ export default {
     computed: {
         emailsToShow() {
             const emailFolder = this.$route.params.folder || 'inbox'
+
+            if (emailFolder === 'read') this.filter = '@read'
+            if (emailFolder === 'unread') this.filter = '@unread'
+
+            // look on folder by url-params
             if (!this.filter && emailFolder) return this.emails.filter(email => {
                 return email.folder === emailFolder
             })
 
-            // simple show/no show of trash
-            // if (!this.filter) return this.emails.filter(email => { return email.isTrash === false })
+            // simple show/no-show of read unread by search @read
+            if (this.filter === '@read' || this.filter === '@unread') return this.emails.filter(email => { return email.isRead === false })
 
+            //search
             return this.emails.filter(email => {
                 return email.subject.toLowerCase().includes(this.filter.toLowerCase()) || email.from.toLowerCase().includes(this.filter.toLowerCase())
             })
@@ -73,8 +79,6 @@ export default {
     },
     created() {
         const emailFolder = this.$route.params.folder
-        console.log('email folder ', emailFolder);
-
     },
 
     methods: {

@@ -1,20 +1,21 @@
+import { emailService } from '../emailservices/email.service.js'
 
 export default {
-    name: 'email-sidebar',
-    template: `
+  name: 'email-sidebar',
+  template: `
     
     <aside id="sidebar" class="nano">
     <div class="nano-content">
       <div class="logo-container"><span class="logo glyphicon glyphicon-envelope"></span>Mail</div><a
         class="compose-button">Compose</a>
-        
+
       <menu class="menu-segment">
         <ul>
-          <li class="active"><a href="#">Inbox<span> (43)</span></a></li>
-          <li><a href="#">Important</a></li>
-          <li><a href="#">Sent</a></li>
-          <li><a href="#">Drafts</a></li>
-          <li><a href="#">Trash</a></li>
+          <li class="active"><a href="#">Inbox<span> ({{inbox}})</span></a></li>
+          <li><a href="#">Important<span> ({{important}})</span></a></li>
+          <li><a href="#">sent<span> ({{sent}})</span></a></li>
+          <li><a href="#">drafts<span> ({{drafts}})</span></a></li>
+          <li><a href="#">trash<span> ({{trash}})</span></a></li>
         </ul>
       </menu>
 
@@ -45,4 +46,15 @@ export default {
   </aside> 
     
     `,
+  data() {
+    return {
+      inbox: emailService.countUnreadInFolder()['inbox'] || 0,
+      important: emailService.countUnreadInFolder()['important'] || 0,
+      trash: emailService.countUnreadInFolder()['trash'] || 0,
+      sent: emailService.countUnreadInFolder()['sent'] || 0,
+      drafts: emailService.countUnreadInFolder()['drafts'] || 0,
+      archive: emailService.countUnreadInFolder()['archive'] || 0
+    }
+  },
+
 }
