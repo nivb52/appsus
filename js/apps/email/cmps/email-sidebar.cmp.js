@@ -56,5 +56,4 @@ export default {
       archive: emailService.countUnreadInFolder()['archive'] || 0
     }
   },
-
 }

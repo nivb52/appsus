@@ -347,7 +347,6 @@ function countUnreadInFolder() {
 
             unreadPerFolder[folder] ? unreadPerFolder[folder]++ : unreadPerFolder[folder] = 1
         }
-        return unreadPerFolder
     })
     return unreadPerFolder
 }
