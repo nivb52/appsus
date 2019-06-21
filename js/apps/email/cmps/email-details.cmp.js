@@ -1,3 +1,4 @@
+import { emailService } from '../emailservices/email.service.js'
 
 export default {
 
@@ -6,7 +7,7 @@ export default {
     <section>
         <h1> DETAILS EMAIL </h1>
         <pre>
-            {{email}}
+            <!-- {{emailDetails}} -->
             
         </pre>
 </section>
@@ -16,8 +17,14 @@ export default {
     created() {
         const emailId = this.$route.params.id
         console.log('email id ', emailId);
-
+        // return emailService.queryId(emailId, 'emails')
     },
-    props: ['email'],
+    methods: {
+        // emailDetails() {
+        // console.log();
+
+        // return emailService.queryId(emailId, 'emails')
+        // }
+    },
 
 }

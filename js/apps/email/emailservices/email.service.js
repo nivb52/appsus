@@ -7,7 +7,8 @@ import { storageService } from '../../../services/storage.service.js'
 import { utilService } from '../../../services/util.service.js'
 
 export const emailService = {
-    query
+    query,
+    queryId
 }
 const EMAIL_KEY = 'emails'
 
@@ -332,6 +333,11 @@ var emailsDB = [
     }
 
 ]
+function queryId(idx, itemsName){
+    if (itemsName.toLowerCase() === 'emails') items = storageService.load(EMAIL_KEY) || emailsDB
+    return utilService.getItemById(idx,items)
+}
+
 
 function query() {
     _addSentDate_Importance_And_TrashKey()
