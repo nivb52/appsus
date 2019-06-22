@@ -9,7 +9,7 @@ export default {
          <router-link  :to="'/email/m/' + email.id"  :email="email" >
       
            <div class="col col-2">
-         <div class="title subject">{{email.subject}}</span></div>
+         <div class="title">{{emailSubject}}</span></div>
          <div class="subject">{{emailBody}}</span></div>
          <div class="date">{{emailDate}}</div>
               
@@ -25,8 +25,13 @@ export default {
 
   },
   computed: {
+    emailSubject() {
+      const longBodySign = this.email.subject.charAt(20) !== '' ? '...' : ''
+      return this.email.subject.substring(0, 20) + longBodySign
+    },
     emailBody() {
-      return this.email.body.substring(1, 30)
+      const longBodySign = this.email.body.charAt(29) !== '' ? '...' : ''
+      return this.email.body.substring(0, 28) + longBodySign
     },
     emailDate() {
       let sentDate = (this.email.sentAt)

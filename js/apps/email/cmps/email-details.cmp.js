@@ -17,13 +17,10 @@ export default {
     created() {
         const emailId = this.$route.params.id
         console.log('email id ', emailId);
-        // return emailService.queryId(emailId, 'emails')
-    },
-    methods: {
-        emailDetails() {
 
-            let x = emailService.queryId(emailId, 'emails')
-            console.log('works ', x);
-        }
+        //TODO: get email details:
+        // let output = emailService.queryId(emailId, 'emails')
+        // console.log('works ', output);
     },
+
 }

@@ -23,12 +23,13 @@ export default {
     props: ['email'],
     methods: {
         onTrash() {
+            //TODO : get it on eventBus and save it to local-storage with all other emails
             this.email.isTrash = true
             this.email.folder = 'trash'
         },
         onRead() {
             console.log('read click');
-
+            //TODO : get it on eventBus and save it to local-storage with all other emails
             this.email.isRead = !this.email.isRead
         }
     },
