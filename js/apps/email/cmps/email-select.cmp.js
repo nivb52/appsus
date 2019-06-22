@@ -1,21 +1,21 @@
-
+import { emailService } from '../emailservices/email.service.js'
 
 export default {
     name: 'email-select',
     template: `
     <div class="col col-1">
-        <span class="dot"></span>
         <div class="checkbox-wrapper">
             <input type="checkbox" id="chk1">
             <label for="chk1" class="toggle"></label>
         </div>
+        <span class="dot"></span>
         
-        <p class="title">{{email.from}}</p>
         
-        <span @onclick="onRead" :class=iconIsRead></span>
+        <span @click="onRead" :class=iconIsRead></span>
         <span @click="onTrash" class="glyphicon glyphicon-trash"></span>
         <span class="star-toggle glyphicon glyphicon-star-empty">
-        </span>
+            </span>
+            <span class="title">{{email.from}}</span>
     </div>
     
     
@@ -23,13 +23,12 @@ export default {
     props: ['email'],
     methods: {
         onTrash() {
-            //TODO : get it on eventBus and save it to local-storage with all other emails
+            emailService.updateKey('trash', this.email.id)
             this.email.isTrash = true
             this.email.folder = 'trash'
         },
         onRead() {
-            console.log('read click');
-            //TODO : get it on eventBus and save it to local-storage with all other emails
+            emailService.updateKey('read', this.email.id)
             this.email.isRead = !this.email.isRead
         }
     },

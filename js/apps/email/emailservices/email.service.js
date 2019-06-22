@@ -9,7 +9,8 @@ import { utilService } from '../../../services/util.service.js'
 export const emailService = {
     query,
     queryId,
-    countUnreadInFolder
+    countUnreadInFolder,
+    updateKey
 }
 const EMAIL_KEY = 'emails'
 const FOLDER_OPS = ['sent', 'drafts', 'important', 'archive']
@@ -369,6 +370,47 @@ function query() {
     storageService.store(EMAIL_KEY, emails)
     return emails
 }
+
+// function to update isRead isTrash and isImportant and after that more
+function updateKey(key, idx, newVal = 0) {
+    key = _getCorrectKey(key) // if not found return false
+    if (!key) return
+
+    let emails = storageService.load(EMAIL_KEY)
+    const foundIdx = emails.findIndex(email => { return email.id === idx })
+
+    if (foundIdx === -1) return
+    // If newVAl !== 0 than 
+    // just replace true to false and opposite
+    if (!newVal) newVal = !emails[foundIdx][key]
+    emails[foundIdx][key] = newVal
+
+    //Changeing folder in case we need:
+    if (key === 'isTrash') emails[foundIdx].folder = newVal ? 'trash' : 'inbox'
+
+    storageService.store(EMAIL_KEY, emails)
+}
+
+
+function _getCorrectKey(key) {
+    key = key.toLowerCase()
+    switch (key) {
+        case 'trash':
+            return 'isTrash'
+        case 'read':
+            return 'isRead'
+        case 'important':
+            return 'isImportant'
+
+        default:
+            return false
+    }
+}
+
+
+
+
+
 
 
 
