@@ -7,20 +7,28 @@ export default {
     <section>
         <h1> DETAILS EMAIL </h1>
         <pre>
-            <!-- {{emailDetails}} -->
+            {{emailDetails}}
             
         </pre>
 </section>
 
      `,
+    data() {
+        return {
+            emailDetails: 'There was a problem, please try again later'
+        }
+    },
 
     created() {
         const emailId = this.$route.params.id
-        console.log('email id ', emailId);
+        this.getEmailDetails(emailId)
 
-        //TODO: get email details:
-        // let output = emailService.queryId(emailId, 'emails')
-        // console.log('works ', output);
+    },
+    methods: {
+        getEmailDetails(emailId) {
+            const email = emailService.queryId(emailId)
+            this.emailDetails = email
+        },
     },
 
 }

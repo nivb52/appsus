@@ -354,10 +354,11 @@ function countUnreadInFolder() {
 
 
 
-
-function queryId(idx, itemsName) {
-    if (itemsName.toLowerCase() === 'emails') items = storageService.load(EMAIL_KEY) || emailsDB
-    return utilService.getItemById(idx, items)
+// TODO: USE THIS FUNC IN THE THE GLOBAL utill.js
+function queryId(idx, itemsName = 'emails') {
+    const items = storageService.load(EMAIL_KEY)
+    const itemIdx = utilService.getItemById(idx, items)
+    return items[itemIdx]
 }
 
 
@@ -437,6 +438,10 @@ function _createEmail() {
         subject: utilService.makeLorem(10),
         body: utilService.getRandomInt(1900, 2000),
         isRead: Math.random() > 0.3 ? true : false,
+
+        // IT IS HERE JUST TO MAKE IT EASIER TO SEE 
+        // AND NOT UPDATE HERE AND THE _newFeature func 
+
         // sentAt: _randomDate(new Date(2019, 6, 6), new Date(2019, 1, 21)),
         // folder: _randomFolder(),
         // isImportant: Math.random() > 0.75 ? true : false,
