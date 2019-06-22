@@ -62,9 +62,12 @@ export default {
   },
   methods: {
     getUnread() {
-      // NOT WORKING 
-      // console.log({ inbox, important, trash, sent, drafts, archive } = emailService.countUnreadInFolder());
+      // this method will be run if there is a change from the eventBus
       // return x = { inbox, important, trash, sent, drafts, archive } = emailService.countUnreadInFolder()
     }
+  },
+  watch: {
+    //TODO we need to change some data with eventBus and whenever it changed
+    // to run a func to update those data
   },
 }
