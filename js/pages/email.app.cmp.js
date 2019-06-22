@@ -61,7 +61,7 @@ export default {
             // simple show/no-show of read unread by search @read
             if (this.filter === '@read' || this.filter === '@unread') return this.emails.filter(email => { return email.isRead === false })
 
-            //search (only 1 word at the moment)
+            //search (only 1 word at the)
             return this.emails.filter(email => {
                 return email.subject.toLowerCase().includes(this.filter.toLowerCase()) && email.folder === emailFolder || email.from.toLowerCase().includes(this.filter.toLowerCase()) && email.folder === emailFolder
             })
@@ -73,7 +73,7 @@ export default {
         console.log('email app is on');
     },
     created() {
-        const emailFolder = this.$route.params.folder
+        // const emailFolder = this.$route.params.folder
     },
 
     methods: {

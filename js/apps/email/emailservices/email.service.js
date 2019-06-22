@@ -18,8 +18,8 @@ const FOLDER_OPS = ['sent', 'drafts', 'important', 'archive']
 var emailsDB = [
     {
         "id": "O2e2G8w0skc",
-        "subject": "Randy, me (5)",
-        "from": "Randy",
+        "subject": "Re: Tell me you got over with those exams",
+        "from": "Eli, me (5)",
         "sentAt": 1999,
         "body": `Please complete your Conceptboard signup &nbsp;&ndash;&nbsp;  You
     recently created a Conceptboard account, but you have not yet confirmed your email. Your email is used
@@ -35,9 +35,9 @@ var emailsDB = [
     {
         "id": "OXeMG8wNskc",
         "subject": "Lucas Kriebel (via Twitter)",
-        "from": "Eli",
+        "from": "Twitter Updates",
         "sentAt": 1999,
-        "body": "Off on Thursday >Eff that place, you might as well stay here with us instead! Sent from my iPhone 4 & gt; 4 mar 2014 at 5: 55 pm",
+        "body": "Off on Thursday that place, you might as well stay here with us instead! Sent from my iPhone 4  4 mar 2014 at 5: 55 pm",
         "isRead": true,
         "labels": [
             "work",
@@ -47,14 +47,12 @@ var emailsDB = [
     },
     {
         "id": "JYOJa2NpSCq",
-        "subject": "Asaf is following you",
+        "subject": "Asaf M. is following you",
         "from":
-            "Barbara Cartland"
+            "Linkdin Subscribers"
         ,
         "sentAt": 1978,
-        "body": `Last pic over my village &nbsp;&ndash;&nbsp;  Yeah i'd like that!
-    Do you remember the video you showed me of your train ride between Colombo and Kandy? The one with the
-    mountain view? I would love to see that one again!`,
+        "body": `Hello There, we just wanted you to know Asaf M. is now following you. by the way,  your CV got now to 1.2 millions institutions and 302,345 followers`,
         "isRead": true,
         "labels": [
             "work",
@@ -99,10 +97,10 @@ var emailsDB = [
         "id": "f4iuVmbuKCC",
         "subject": "Why work had when you can get those photos free",
         "from":
-            "Dr. Seuss"
+            "Eran from iCloud"
         ,
         "sentAt": 2011,
-        "body": "Montly High-Res Photos To create this month's pack, we hosted a party with local musician Jared Mahone here in Columbus, Ohio.",
+        "body": "Montly High-Res Photos To create this month's pack, we hosted a party with local musician Jared Mahone here in Columbus, Ohio. thought maybe you want some music inspiration for the weekend. Here are some trending tracks and playlists we think you should give a listen! habitant nam imperdiet nostra elit dapibus nisl adipiscing in",
         "isRead": false,
         "labels": [
             "work",
@@ -112,12 +110,12 @@ var emailsDB = [
     },
     {
         "id": "U2rfZO6oBZf",
-        "subject": "Infinity Revibe on HR",
+        "subject": "לא מתוכננים לך אירועים להיום.",
         "from":
-            "Leo Tolstoy"
+            "יומן Google"
         ,
         "sentAt": 1978,
-        "body": "thought maybe you want some music inspiration for the weekend. Here are some trending tracks and playlists we think you should give a listen! habitant nam imperdiet nostra elit dapibus nisl adipiscing in",
+        "body": "אין לך אירועים שנקבעו להיום ",
         "isRead": false,
         "labels": [
             "work",
@@ -144,7 +142,7 @@ var emailsDB = [
         "id": "9laHCEdSpFy",
         "subject": "Can you send me your new app version",
         "from":
-            "Dr. Aviad"
+            "הבוס"
         ,
         "sentAt": 1999,
         "body": "I am willing to accept your offer for the new ap build, with the price you offered, magna quisque venenatis laoreet purus in semper habitant proin pellentesque sed egestas cursus faucibus nam enim id sit mi ligula risus curabitur senectus curabitur sodales fames sem",
@@ -177,7 +175,7 @@ var emailsDB = [
             "John"
         ,
         "sentAt": 1978,
-        "body": "curabitur bibendum in dolor neque magna phasellus arcu nulla cubilia senectus maecenas ullamcorper neque accumsan facilisis dictumst ornare",
+        "body": "Call me. I can;t make it on time !!! ",
         "isRead": true,
         "labels": [
             "work",
@@ -192,7 +190,7 @@ var emailsDB = [
             "Danielle Steel"
         ,
         "sentAt": 2018,
-        "body": "Task assigned: Clone ARP's website You have been assigned a task by Alex@Work on the board Web.",
+        "body": "Task assigned: Clone API website You have been assigned a task by Alex@Work on the board Web.",
         "isRead": true,
         "labels": [
             "work",
@@ -207,7 +205,7 @@ var emailsDB = [
             "Emi Nave"
         ,
         "sentAt": 2018,
-        "body": "aenean mauris porta netus accumsan turpis etiam vestibulum vivamus sagittis nullam nec tellus quam mattis est pellentesque nisi litora sit ad",
+        "body": "Last pic over my village &nbsp;&ndash;&nbsp;  Yeah i'd like that! Do you remember the video you showed me of your train ride between Colombo and Kandy? The one with the mountain view? I would love to see that one again!",
         "isRead": false,
         "labels": [
             "work",
@@ -216,12 +214,12 @@ var emailsDB = [
     },
     {
         "id": "2RvT48ZNInj",
-        "subject": "Let's go fishing!",
+        "subject": "We Are Hiring!",
         "from":
             "Agatha Christie"
         ,
         "sentAt": 2011,
-        "body": " Hi, what do you say,  at the lake tomorrow? It'll be awesome. nec faucibus arcu suspendisse tempus potenti lobortis aliquam quisque augue integer consectetur etiam ultrices curabitur tristique metus",
+        "body": " In the nearly 20 years Bekelman&Tamir exists, we’ve grown to become one of the leading UX agencies in Europe by volume of work. We’ve delivered hundreds of projects to some of the biggest Israeli and multinational clients. From complex operational systems to mobile apps, websites and UI/UX projects - we’ve done it all. Among our clients are governmental agencies, banks, start-ups, and industry giants.",
         "isRead": true,
         "labels": [
             "work",
@@ -291,12 +289,12 @@ var emailsDB = [
     },
     {
         "id": "xm1z5bbZjlS",
-        "subject": "class habitant at commodo semper ligula a bibendum",
+        "subject": "Purchase confirmation from Rav-Kav Online‏",
         "from":
-            "Leo Tolstoy"
+            "Rav-Kav Online"
         ,
         "sentAt": 1999,
-        "body": "himenaeos quis iaculis orci libero egestas quam varius primis erat lacus facilisis blandit dictum tristique interdum litora quisque purus senectus pretium purus",
+        "body": " The contract was loaded successfully!The contract was loaded successfully!Did you know?You can view your entire transaction history, including purchase confirmations.Open the app or the website and go to Personal area → Loading history.",
         "isRead": false,
         "labels": [
             "work",
@@ -306,12 +304,12 @@ var emailsDB = [
     },
     {
         "id": "u3j6QIKLlJb",
-        "subject": "nullam class risus amet senectus scelerisque etiam curabitur",
+        "subject": "[Elasticsearch News] Security is now free + Kubernetes Operator",
         "from":
-            "Agatha Christie"
+            "Agatha Christie  - Elastic Releases"
         ,
         "sentAt": 1978,
-        "body": "torquent in et id lacus vivamus aptent cursus erat integer venenatis risus ac ante quam etiam euismod feugiat risus suscipit rhoncus pharetra quisque felis",
+        "body": "Hey there,Are you a fan of free security features? How about Kubernetes? We have a feeling you’ll enjoy today’s news.Elasticsearch core security features are now freeWe are moving core security features for Elasticsearch and Kibana into the free, default distribution of the Elastic Stack, starting with version 6.8 and 7.1, which we released today. This means that users can now encrypt network traffic, create and manage users, define roles that protect index & cluster level access and fully secure Kibana with Spaces - for free! (Note, these features are already part of our standard Elasticsearch Service hosted offering today.)This is an exciting next step for our community. We opened the code of these features last year and by making them free today, our users can now run a fully secure cluster, right out of the box",
         "isRead": true,
         "labels": [
             "work",
@@ -321,12 +319,12 @@ var emailsDB = [
     },
     {
         "id": "vxYYYdVlEH3",
-        "subject": "varius malesuada augue molestie sollicitudin faucibus mi eu tempus",
+        "subject": "פירוט עסקאות תקופתי ירוק לשירותכם",
         "from":
-            "William Shakespeare"
+            "פנגו"
         ,
         "sentAt": 2011,
-        "body": "aliquet euismod mi vivamus bibendum donec etiam quisque iaculis ullamcorper est sed",
+        "body": " הייתה שנה נפלאה ביחדאנו שמחים שבחרת בנו כשותפים לדרךנמשיך לעבוד על שירותים וחידושים נוספיםשישדרגו את החוויה ויקלו עליך.להלן פירוט החיובים שלך לתקופה:01/01/2018 ועד 31/12/2018 לצפייה בפירוט החשבונית לחץ כאןפעולות נוספות לרשותך:עדכון פרטי חשבוןשחזור סיסמההחשבונית כוללת חיתום דיגיטלי ולכן משמשת גם לצרכי מס.",
         "isRead": true,
         "labels": [
             "work",
