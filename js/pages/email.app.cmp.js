@@ -49,6 +49,7 @@ export default {
         emailsToShow() {
             const emailFolder = this.$route.params.folder || 'inbox'
 
+            // advance user search option: 
             if (emailFolder === 'read') this.filter = '@read'
             if (emailFolder === 'unread') this.filter = '@unread'
 
@@ -60,9 +61,9 @@ export default {
             // simple show/no-show of read unread by search @read
             if (this.filter === '@read' || this.filter === '@unread') return this.emails.filter(email => { return email.isRead === false })
 
-            //search
+            //search (only 1 word at the moment)
             return this.emails.filter(email => {
-                return email.subject.toLowerCase().includes(this.filter.toLowerCase()) || email.from.toLowerCase().includes(this.filter.toLowerCase())
+                return email.subject.toLowerCase().includes(this.filter.toLowerCase()) && email.folder === emailFolder || email.from.toLowerCase().includes(this.filter.toLowerCase()) && email.folder === emailFolder
             })
 
 
