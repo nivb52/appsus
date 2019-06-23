@@ -1,0 +1,39 @@
+.app-header {
+    padding: 10px;
+    background-color: lightblue;
+    font-weight: 600;
+}
+
+.app-footer {
+    background-color: lightgray;
+    padding: 10px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.home-img {
+    width: 100vw;
+    align-content: center
+}
+
+.about-us-desc {
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-top: 10px;
+    background: rgb(197, 215, 226);
+    background: radial-gradient(circle, rgba(197, 215, 226, 1) 0%, rgba(71, 100, 135, 1) 100%);
+}
+
+.tamir-img {
+    border-radius: 100px;
+}
+
+.niv-img {
+    border-radius: 100px;
+    height: 230px;
+}
+
+.tamir-desc {
+    margin-bottom: 0;
+    padding-bottom: 10px;
+}

@@ -11,11 +11,14 @@ var app = new Vue({
         console.log('App has been Created!');
     },
     template: `
-        <div>
-            <app-header></app-header>
-            <router-view></router-view>
-            <footer>Niv & Tamir rights reserved 2019</footer>
-        </div>
+    <div>
+           <app-header class="app-header"></app-header>
+           <router-view></router-view>
+           <footer class="app-footer">Niv & Tamir rights reserved 2019</footer>
+       </div>
+   
+
+
     `,
     components: {
         appHeader

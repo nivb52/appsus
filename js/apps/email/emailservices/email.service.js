@@ -381,7 +381,8 @@ function updateKey(key, idx, newVal = 0) {
     emails[foundIdx][key] = newVal
 
     //Changeing folder in case we need:
-    if (key === 'isTrash') emails[foundIdx].folder = newVal ? 'trash' : 'inbox'
+    if (key === 'isTrash') emails[foundIdx].folder = 'trash'
+    if (key === 'isTrash') emails[foundIdx].labels = []
 
     storageService.store(EMAIL_KEY, emails)
 }
