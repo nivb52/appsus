@@ -9,7 +9,7 @@ export default {
         
         <span @click="onRead" :class=iconIsRead></span>
         <span @click="onTrash" class="glyphicon glyphicon-trash"></span>
-        <span class="star-toggle glyphicon glyphicon-star-empty">
+        <span @click="onStar" class="star-toggle glyphicon glyphicon-star-empty">
             </span>
             <span class="title">{{email.from}}</span>
     </div>
@@ -20,12 +20,19 @@ export default {
     methods: {
         onTrash() {
             emailService.updateKey('trash', this.email.id)
-            this.email.isTrash = true
-            this.email.folder = 'trash'
+            // SAVE ON THE COMANDS ORDER (first to the right folder, then isTrash)
+            this.email.folder = this.email.isTrash ? 'deleted' : 'trash'
+            this.email.isTrash = !this.email.isTrash
         },
         onRead() {
             emailService.updateKey('read', this.email.id)
             this.email.isRead = !this.email.isRead
+        },
+        onStar() {
+            emailService.updateKey('important', this.email.id)
+            this.email.isImportant = !this.email.isImportant
+            this.email.folder = this.email.isImportant ? 'important' : 'inbox'
+
         }
     },
     computed: {
