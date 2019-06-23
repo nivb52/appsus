@@ -11,6 +11,10 @@
     text-align: center;
 }
 
+.about-us-title {
+    font-weight: 600
+}
+
 .home-img {
     width: 100vw;
     align-content: center

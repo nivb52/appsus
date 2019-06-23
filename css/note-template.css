@@ -1,0 +1,28 @@
+.note-todo {
+    margin-left: 10px
+}
+
+.numbered-todo-list {
+    border-style: solid;
+    border-width: 1px;
+    border-color: #b3a7a7;
+    width: fit-content;
+    border-radius: 10px;
+    padding: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 1.4rem
+}
+
+.todo-done {
+    text-decoration: line-through;
+}
+
+.delete-todo-btn {
+    border-radius: 15px;
+}
+
+.note-link-text {
+    width: 50%;
+    border-radius: 10px;
+}
