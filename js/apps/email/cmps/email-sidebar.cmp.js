@@ -1,4 +1,5 @@
 import { emailService } from '../emailservices/email.service.js'
+import emailCompose from './email-compose.cmp.js'
 
 export default {
   name: 'email-sidebar',
@@ -7,7 +8,10 @@ export default {
     <aside id="sidebar" class="nano">
     <div class="nano-content">
       <div class="logo-container"><span class="logo glyphicon glyphicon-envelope"></span>Mail</div><a
-        class="compose-button">Compose</a>
+        class="compose-button" @click="isCompose = !isCompose" >Compose</a>
+        <email-compose v-show="isCompose"></email-compose>
+
+
 
       <menu class="menu-segment">
         <ul>
@@ -55,6 +59,7 @@ export default {
   data() {
     return {
       unread: emailService.countUnreadInFolder(),
+      isCompose: false
     }
   },
   computed: {
@@ -66,4 +71,9 @@ export default {
     //TODO we need to change some data with eventBus and whenever it changed
     // to run a func to update those data
   },
+  components: {
+
+    emailCompose
+  }
+
 }
