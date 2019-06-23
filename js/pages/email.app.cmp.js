@@ -3,7 +3,6 @@ import emailList from '../apps/email/cmps/email-list.cmp.js'
 import emailSidebar from '../apps/email/cmps/email-sidebar.cmp.js'
 import emailFilter from '../apps/email/cmps/email-filter.cmp.js'
 // import emailDetails from '../cmps/email-details.cmp.js';
-// import emailFilter from '../cmps/email-filter.cmp.js';
 // import eventBus from '../cmps/email-bus.cmp.js';
 
 var emails = emailService.query()
@@ -47,13 +46,22 @@ export default {
     },
     computed: {
         emailsToShow() {
+            const emailLabel = this.$route.params.labels || false
             const emailFolder = this.$route.params.folder || 'inbox'
 
             // advance user search option: 
             if (emailFolder === 'read') this.filter = '@read'
             if (emailFolder === 'unread') this.filter = '@unread'
 
-            // look on folder by url-params
+            if (emailLabel) {
+                // look on label by url-params
+                if (!this.filter && emailLabel) return this.emails.filter(email => {
+                    return email.labels.includes(emailLabel)
+                })
+            }
+
+
+            // look on folder  by url-params
             if (!this.filter && emailFolder) return this.emails.filter(email => {
                 return email.folder === emailFolder
             })

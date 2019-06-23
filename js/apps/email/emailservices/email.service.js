@@ -27,7 +27,7 @@ var emailsDB = [
     retrieval).`,
         "isRead": true,
         "labels": [
-            "work",
+            "bills",
             "marketing"
         ],
 
@@ -41,7 +41,7 @@ var emailsDB = [
         "isRead": true,
         "labels": [
             "work",
-            "marketing"
+            "social"
         ],
 
     },
@@ -55,8 +55,7 @@ var emailsDB = [
         "body": `Hello There, we just wanted you to know Asaf M. is now following you. by the way,  your CV got now to 1.2 millions institutions and 302,345 followers`,
         "isRead": true,
         "labels": [
-            "work",
-            "marketing"
+            "social"
         ],
 
     },
@@ -71,8 +70,7 @@ var emailsDB = [
         "body": "This Week's Top Stories Our top pick for you on Medium this week The Man Who Destroyed America’s Ego",
         "isRead": true,
         "labels": [
-            "work",
-            "marketing"
+            "toread"
         ],
 
     },
@@ -103,7 +101,7 @@ var emailsDB = [
         "body": "Montly High-Res Photos To create this month's pack, we hosted a party with local musician Jared Mahone here in Columbus, Ohio. thought maybe you want some music inspiration for the weekend. Here are some trending tracks and playlists we think you should give a listen! habitant nam imperdiet nostra elit dapibus nisl adipiscing in",
         "isRead": false,
         "labels": [
-            "work",
+            "social",
             "marketing"
         ],
 
@@ -119,7 +117,7 @@ var emailsDB = [
         "isRead": false,
         "labels": [
             "work",
-            "marketing"
+            "google"
         ],
 
     },
@@ -134,7 +132,7 @@ var emailsDB = [
         "isRead": true,
         "labels": [
             "work",
-            "marketing"
+            "stocks"
         ],
 
     },
@@ -149,7 +147,7 @@ var emailsDB = [
         "isRead": true,
         "labels": [
             "work",
-            "marketing"
+
         ],
 
     },
@@ -163,7 +161,7 @@ var emailsDB = [
         "body": "porttitor nisl sodales id eu tellus venenatis laoreet auctor dictumst nulla",
         "isRead": true,
         "labels": [
-            "work",
+            "bills",
             "marketing"
         ],
 
@@ -178,8 +176,7 @@ var emailsDB = [
         "body": "Call me. I can;t make it on time !!! ",
         "isRead": true,
         "labels": [
-            "work",
-            "marketing"
+            "meetings"
         ],
 
     },
@@ -193,7 +190,6 @@ var emailsDB = [
         "body": "Task assigned: Clone API website You have been assigned a task by Alex@Work on the board Web.",
         "isRead": true,
         "labels": [
-            "work",
             "marketing"
         ],
 
@@ -208,8 +204,8 @@ var emailsDB = [
         "body": "Last pic over my village &nbsp;&ndash;&nbsp;  Yeah i'd like that! Do you remember the video you showed me of your train ride between Colombo and Kandy? The one with the mountain view? I would love to see that one again!",
         "isRead": false,
         "labels": [
-            "work",
-            "marketing"
+            "pictures",
+            "meetings"
         ],
     },
     {
@@ -223,7 +219,7 @@ var emailsDB = [
         "isRead": true,
         "labels": [
             "work",
-            "marketing"
+            "diggers"
         ],
 
     },
@@ -253,7 +249,7 @@ var emailsDB = [
         "isRead": true,
         "labels": [
             "work",
-            "marketing"
+            "google"
         ],
 
     },
@@ -312,7 +308,7 @@ var emailsDB = [
         "body": "Hey there,Are you a fan of free security features? How about Kubernetes? We have a feeling you’ll enjoy today’s news.Elasticsearch core security features are now freeWe are moving core security features for Elasticsearch and Kibana into the free, default distribution of the Elastic Stack, starting with version 6.8 and 7.1, which we released today. This means that users can now encrypt network traffic, create and manage users, define roles that protect index & cluster level access and fully secure Kibana with Spaces - for free! (Note, these features are already part of our standard Elasticsearch Service hosted offering today.)This is an exciting next step for our community. We opened the code of these features last year and by making them free today, our users can now run a fully secure cluster, right out of the box",
         "isRead": true,
         "labels": [
-            "work",
+            "diggers",
             "marketing"
         ],
 
@@ -327,8 +323,8 @@ var emailsDB = [
         "body": " הייתה שנה נפלאה ביחדאנו שמחים שבחרת בנו כשותפים לדרךנמשיך לעבוד על שירותים וחידושים נוספיםשישדרגו את החוויה ויקלו עליך.להלן פירוט החיובים שלך לתקופה:01/01/2018 ועד 31/12/2018 לצפייה בפירוט החשבונית לחץ כאןפעולות נוספות לרשותך:עדכון פרטי חשבוןשחזור סיסמההחשבונית כוללת חיתום דיגיטלי ולכן משמשת גם לצרכי מס.",
         "isRead": true,
         "labels": [
-            "work",
-            "marketing"
+            "חשבוניות",
+            "bills"
         ],
 
     }

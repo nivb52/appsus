@@ -24,9 +24,15 @@ export default {
       <div class="menu-segment">
         <ul class="labels">
           <li class="title">Labels <span class="icon">+</span></li>
-          <li><a href="#">Dribbble <span class="ball pink"></span></a></li>
-          <li><a href="#">Roommates <span class="ball green"></span></a></li>
-          <li><a href="#">Bills <span class="ball blue"></span></a></li>
+          <li><router-link :to="'/email/l/marketing'"> Marketing <span class="ball pink"></span></router-link></li>
+          <li><router-link :to="'/email/l/work'"> Work <span class="ball green"></span></router-link></li>
+          <li><router-link :to="'/email/l/bills'" >Bills <span class="ball blue"></span></router-link></li>
+          <li><router-link :to="'/email/l/google'" >Google <span class="ball "></span></router-link></li>
+          <li><router-link :to="'/email/l/social'" >Social <span class="ball green"></span></router-link></li>
+          <li><router-link :to="'/email/l/toread'" >לקרוא <span class="ball blue"></span></router-link></li>
+          <li><router-link :to="'/email/l/pictures'" >תמונות <span class="ball pink"></span></router-link></li>
+          <li><router-link :to="'/email/l/meetings'" >Meetings <span class="ball green"></span></router-link></li>
+          <li><router-link :to="'/email/l/diggers'" >החופרים <span class="ball"></span></router-link></li>
         </ul>
       </div>
       <div class="separator"></div>
