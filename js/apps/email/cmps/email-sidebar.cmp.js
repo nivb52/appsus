@@ -1,4 +1,7 @@
 import { emailService } from '../emailservices/email.service.js'
+import emailCompose from './email-compose.cmp.js'
+import eventBusEmails from './eventBusEmails.cmp.js'
+
 
 export default {
   name: 'email-sidebar',
@@ -7,15 +10,18 @@ export default {
     <aside id="sidebar" class="nano">
     <div class="nano-content">
       <div class="logo-container"><span class="logo glyphicon glyphicon-envelope"></span>Mail</div><a
-        class="compose-button">Compose</a>
+        class="compose-button" @click="isCompose = !isCompose" >Compose</a>
+        <email-compose v-show="isCompose"></email-compose>
+
+
 
       <menu class="menu-segment">
         <ul>
-          <li class="active"> <router-link  :to="'/email'"> Inbox<span> ({{unread.inbox}})</span></router-link></li>
-          <li><router-link  :to="'/email/important'"> Important<span> ({{unread.important}})</span></router-link></li>
-          <li><router-link  :to="'/email/sent'">sent<span> ({{unread.sent}})</span></router-link></li>
-          <li><router-link  :to="'/email/drafts'">drafts<span> ({{unread.drafts}})</span></router-link></li>
-          <li><router-link  :to="'/email/trash'">trash<span> ({{unread.trash}})</span></router-link></li>
+          <li class="active"> <router-link  :to="'/email'"> Inbox<span> ({{unread.inbox || 0}})</span></router-link></li>
+          <li><router-link  :to="'/email/important'"> Important<span> ({{unread.important || 0}})</span></router-link></li>
+          <li><router-link  :to="'/email/sent'">sent<span> ({{unread.sent || 0}})</span></router-link></li>
+          <li><router-link  :to="'/email/drafts'">drafts<span> ({{unread.drafts || 0}})</span></router-link></li>
+          <li><router-link  :to="'/email/trash'">trash<span> ({{unread.trash || 0}})</span></router-link></li>
         </ul>
       </menu>
 
@@ -54,26 +60,37 @@ export default {
     `,
   data() {
     return {
-      unread: {
-        // TODO : RUN THE FUNC ONLY ONCE
-        inbox: emailService.countUnreadInFolder()['inbox'] || 0,
-        important: emailService.countUnreadInFolder()['important'] || 0,
-        trash: emailService.countUnreadInFolder()['trash'] || 0,
-        sent: emailService.countUnreadInFolder()['sent'] || 0,
-        drafts: emailService.countUnreadInFolder()['drafts'] || 0,
-        archive: emailService.countUnreadInFolder()['archive'] || 0
-      }
+      unread: emailService.countUnreadInFolder(),
+      isCompose: false,
 
     }
   },
   methods: {
-    getUnread() {
-      // this method will be run if there is a change from the eventBus
-      // return x = { inbox, important, trash, sent, drafts, archive } = emailService.countUnreadInFolder()
+    updateTrash(diff) {
+      this.unread['trash'] += diff
+    },
+    test() {
+      return emailService.countUnreadInFolder()
+      // this.unread = currUnread
     }
   },
-  watch: {
-    //TODO we need to change some data with eventBus and whenever it changed
-    // to run a func to update those data
+  created() {
+    eventBusEmails.$on('updateUnreadInFolder', () => {
+      let currUnread = emailService.countUnreadInFolder()
+      this.unread = currUnread
+    })
+
+    eventBusEmails.$on('trash', diff => {
+      this.updateTrash(diff)
+    })
+
   },
+  computed: {
+
+  },
+  components: {
+    emailCompose,
+    eventBusEmails
+  }
+
 }

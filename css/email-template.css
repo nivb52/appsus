@@ -572,7 +572,7 @@ a:hover {
   top: 0;
   right: 0;
   bottom: 0;
-  width: 60%;
+  width: 69%;
 }
 
 #main .message-list li .col-2 .subject, #main .message-list li .col-2 .date {
@@ -808,6 +808,12 @@ a:hover {
   }
 }
 
+@media only screen and (max-width: 700px) {
+  #main .message-list li .col-2 .date {
+    display: none;
+  }
+}
+
 @media only screen and (max-width: 600px) {
   #main .header .search-box {
     float: none;
@@ -838,11 +844,12 @@ a:hover {
   #main .message-list li .col-2 {
     right: 0;
     left: auto;
-    width: 120px;
+    width: 60%;
   }
   #main .message-list li .col-2 .date {
     padding-left: 0;
     position: static;
+    visibility: hidden;
   }
   #main .message-list li .col-2 .subject {
     display: none;

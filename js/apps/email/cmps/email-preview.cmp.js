@@ -26,12 +26,12 @@ export default {
   },
   computed: {
     emailSubject() {
-      const longBodySign = this.email.subject.charAt(20) !== '' ? '...' : ''
-      return this.email.subject.substring(0, 20) + longBodySign
+      const longBodySign = this.email.subject.charAt(50) !== '' ? '...' : ''
+      return this.email.subject.substring(0, 50) + longBodySign
     },
     emailBody() {
-      const longBodySign = this.email.body.charAt(29) !== '' ? '...' : ''
-      return this.email.body.substring(0, 28) + longBodySign
+      const longBodySign = this.email.body.charAt(50) !== '' ? '...' : ''
+      return this.email.body.substring(0, 50) + longBodySign
     },
     emailDate() {
       let sentDate = (this.email.sentAt)

@@ -14,7 +14,7 @@ var app = new Vue({
     <div>
            <app-header class="app-header"></app-header>
            <router-view></router-view>
-           <footer class="app-footer">Niv & Tamir rights reserved 2019</footer>
+           <!-- <footer class="app-footer">Niv & Tamir rights reserved 2019</footer> -->
        </div>
    
 

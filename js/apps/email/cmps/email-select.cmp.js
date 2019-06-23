@@ -1,19 +1,16 @@
 import { emailService } from '../emailservices/email.service.js'
+import eventBusEmails from './eventBusEmails.cmp.js'
 
 export default {
     name: 'email-select',
     template: `
-    <div class="col col-1">
-        <div class="checkbox-wrapper">
-            <input type="checkbox" id="chk1">
-            <label for="chk1" class="toggle"></label>
-        </div>
-        <span class="dot"></span>
-        
+    <div>
+        <input type="checkbox" id="chk1">
+        <label for="chk1" class="toggle"></label>
         
         <span @click="onRead" :class=iconIsRead></span>
         <span @click="onTrash" class="glyphicon glyphicon-trash"></span>
-        <span class="star-toggle glyphicon glyphicon-star-empty">
+        <span @click="onStar" class="star-toggle glyphicon glyphicon-star-empty">
             </span>
             <span class="title">{{email.from}}</span>
     </div>
@@ -24,12 +21,25 @@ export default {
     methods: {
         onTrash() {
             emailService.updateKey('trash', this.email.id)
-            this.email.isTrash = true
-            this.email.folder = 'trash'
+            const status = this.email.isTrash // if true it will be deleted
+            this.email.folder = status ? 'deleted' : 'trash'
+
+            // IF IT IS UNREAD
+            if (!this.email.isRead) eventBusEmails.$emit('trash', status ? -1 : 1) // true = deleted = -1 
+            this.email.isTrash = !this.email.isTrash
         },
         onRead() {
             emailService.updateKey('read', this.email.id)
             this.email.isRead = !this.email.isRead
+            eventBusEmails.$emit('updateUnreadInFolder')
+        },
+        onStar() {
+            emailService.updateKey('important', this.email.id)
+
+            this.email.isImportant = !this.email.isImportant
+            this.email.folder = this.email.isImportant ? 'important' : 'inbox'
+
+            eventBusEmails.$emit('updateUnreadInFolder') // true = -1         
         }
     },
     computed: {
@@ -40,4 +50,8 @@ export default {
         }
 
     },
+    components: {
+        eventBusEmails
+
+    }
 }
