@@ -352,7 +352,6 @@ function countUnreadInFolder() {
     const result = emails.forEach(currEmail => {
         if (!currEmail.isRead) {
             let folder = currEmail.folder;
-
             unreadPerFolder[folder] ? unreadPerFolder[folder]++ : unreadPerFolder[folder] = 1
         }
     })

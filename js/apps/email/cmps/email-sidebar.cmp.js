@@ -1,5 +1,7 @@
 import { emailService } from '../emailservices/email.service.js'
 import emailCompose from './email-compose.cmp.js'
+import eventBusEmails from './eventBusEmails.cmp.js'
+
 
 export default {
   name: 'email-sidebar',
@@ -59,21 +61,36 @@ export default {
   data() {
     return {
       unread: emailService.countUnreadInFolder(),
-      isCompose: false
+      isCompose: false,
+
     }
+  },
+  methods: {
+    updateTrash(diff) {
+      this.unread['trash'] += diff
+    },
+    test() {
+      return emailService.countUnreadInFolder()
+      // this.unread = currUnread
+    }
+  },
+  created() {
+    eventBusEmails.$on('updateUnreadInFolder', () => {
+      let currUnread = emailService.countUnreadInFolder()
+      this.unread = currUnread
+    })
+
+    eventBusEmails.$on('trash', diff => {
+      this.updateTrash(diff)
+    })
+
   },
   computed: {
-    getUnread() {
-      this.unread = mailService.countUnreadInFolder()
-    }
-  },
-  watch: {
-    //TODO we need to change some data with eventBus and whenever it changed
-    // to run a func to update those data
+
   },
   components: {
-
-    emailCompose
+    emailCompose,
+    eventBusEmails
   }
 
 }

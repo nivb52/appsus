@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <!-- reset -->
     <style>
         html,
         body,
@@ -138,23 +139,43 @@
             border-spacing: 0;
         }
     </style>
-    <style>
 
+    <!-- my -->
+    <style>
+        .flex {
+            display: flex;
+            flex-direction: row
+        }
+
+        .green {
+            background-color: green
+        }
+
+        .red {
+            background-color: red
+        }
+
+        .blue {
+            background-color: blue
+        }
+
+        .purple {
+            background-color: purple
+        }
     </style>
 </head>
 
 <body>
+    <div class="flex container">
 
-
-    <ul>
-        <li>
-            <span> RANDY</span>
-            <span> I WILL CALL YOU AGAIN </span>
-            <span>5 Mar</span>
-            <span></span>
-
-        </li>
-    </ul>
+        <div class="flex">
+            <div class="avatar">Pic</div>
+            <div class="green">NAME</div>
+            <div class="red">title</div>
+            <div class="blue">subject</div>
+            <div class="purple">18:00 am</div>
+        </div>
+    </div>
 
 </body>
 
