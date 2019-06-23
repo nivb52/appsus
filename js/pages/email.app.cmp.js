@@ -70,11 +70,18 @@ export default {
             // simple show/no-show of read unread by search @read
             if (this.filter === '@read' || this.filter === '@unread') return this.emails.filter(email => { return email.isRead === false })
 
-            //search (only 1 word at the)
-            return this.emails.filter(email => {
-                return email.subject.toLowerCase().includes(this.filter.toLowerCase()) && email.folder === emailFolder || email.from.toLowerCase().includes(this.filter.toLowerCase()) && email.folder === emailFolder
-            })
+            const currPath = emailLabel || emailFolder
+            const currKey = emailLabel ? 'labels' : 'folder'
 
+
+            const searchParshe = this.filter.trim().toLowerCase().split(' ')
+
+            //search (for more than 1 word )
+            var filteredEmails = this.emails
+            for (var i = 0; i < searchParshe.length; i++) {
+                filteredEmails = this.search(searchParshe[i], filteredEmails, currKey, currPath)
+            }
+            return filteredEmails
 
         },
     },
@@ -94,6 +101,16 @@ export default {
             this.isSelected = false
             this.selectedemail = email
         },
+
+        search(searchParshe, emails, currKey, currPath) {
+            return emails.filter(email => {
+                return email.subject.toLowerCase().includes(searchParshe) ||
+                    email.body.toLowerCase().includes(searchParshe) ||
+                    email.from.toLowerCase().includes(searchParshe) &&
+                    // SEARCH IN LABELS AND FOLDERS :
+                    (email[currKey] === currPath || email[currKey].includes(currPath))
+            })
+        }
     },
 
     components: {

@@ -46,6 +46,19 @@ var emailsDB = [
 
     },
     {
+        "id": "OXe4547wNskc",
+        "subject": "Eli Mana (via Twitter)",
+        "from": "Twitter Updates",
+        "sentAt": 1999,
+        "body": "Monday that place, you might as well stay here with us instead! Sent from my iPhone 4  4 mar 2014 at 5: 55 pm",
+        "isRead": true,
+        "labels": [
+            "work",
+            "social"
+        ],
+
+    },
+    {
         "id": "JYOJa2NpSCq",
         "subject": "Asaf M. is following you",
         "from":
@@ -335,7 +348,7 @@ var emailsDB = [
 // COUNTING THE UNREAD EMAILS FOR EACH FOLDER
 function countUnreadInFolder() {
     const emails = query()
-    var unreadPerFolder = { emails: 0 }
+    var unreadPerFolder = { none: 0 }
     const result = emails.forEach(currEmail => {
         if (!currEmail.isRead) {
             let folder = currEmail.folder;
@@ -367,7 +380,7 @@ function query() {
 }
 
 // function to update isRead isTrash and isImportant and after that more
-function updateKey(key, idx, newVal = 0) {
+function updateKey(key, idx, newFolder = 0) {
     key = _getCorrectKey(key) // if not found return false
     if (!key) return
 
@@ -377,8 +390,8 @@ function updateKey(key, idx, newVal = 0) {
     if (foundIdx === -1) return
     // If newVAl !== 0 than 
     // just replace true to false and opposite
-    if (!newVal) newVal = !emails[foundIdx][key]
-    emails[foundIdx][key] = newVal
+    if (!newFolder) newFolder = !emails[foundIdx][key]
+    emails[foundIdx][key] = newFolder
 
     //Changeing folder in case we need:
     if (key === 'isTrash') emails[foundIdx].folder = 'trash'
@@ -456,7 +469,7 @@ function _randomDate(start, end) {
 
 function _addNewFeatures(emails) {
     return emails.forEach(email => {
-        email.folder = Math.random() > 0.3 ? 'inbox' : _randomFolder();
+        email.folder = Math.random() > 0.6 ? 'inbox' : _randomFolder();
         email.isTrash = false;
         email.isImportant = Math.random() > 0.75 ? true : false;
         email.sentAt = _randomDate(new Date(2019, 1, 1), new Date(2019, 4, 4));
@@ -465,6 +478,6 @@ function _addNewFeatures(emails) {
 
 function _randomFolder() {
     let folders = FOLDER_OPS
-    return folders[Math.floor(Math.random() * folders.length - 1)]
+    return folders[Math.floor(Math.random() * folders.length)]
 }
 

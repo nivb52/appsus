@@ -3,13 +3,9 @@ import { emailService } from '../emailservices/email.service.js'
 export default {
     name: 'email-select',
     template: `
-    <div class="col col-1">
-        <div class="checkbox-wrapper">
-            <input type="checkbox" id="chk1">
-            <label for="chk1" class="toggle"></label>
-        </div>
-        <span class="dot"></span>
-        
+    <div>
+        <input type="checkbox" id="chk1">
+        <label for="chk1" class="toggle"></label>
         
         <span @click="onRead" :class=iconIsRead></span>
         <span @click="onTrash" class="glyphicon glyphicon-trash"></span>

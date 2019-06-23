@@ -11,11 +11,11 @@ export default {
 
       <menu class="menu-segment">
         <ul>
-          <li class="active"> <router-link  :to="'/email'"> Inbox<span> ({{unread.inbox}})</span></router-link></li>
-          <li><router-link  :to="'/email/important'"> Important<span> ({{unread.important}})</span></router-link></li>
-          <li><router-link  :to="'/email/sent'">sent<span> ({{unread.sent}})</span></router-link></li>
-          <li><router-link  :to="'/email/drafts'">drafts<span> ({{unread.drafts}})</span></router-link></li>
-          <li><router-link  :to="'/email/trash'">trash<span> ({{unread.trash}})</span></router-link></li>
+          <li class="active"> <router-link  :to="'/email'"> Inbox<span> ({{unread.inbox || 0}})</span></router-link></li>
+          <li><router-link  :to="'/email/important'"> Important<span> ({{unread.important || 0}})</span></router-link></li>
+          <li><router-link  :to="'/email/sent'">sent<span> ({{unread.sent || 0}})</span></router-link></li>
+          <li><router-link  :to="'/email/drafts'">drafts<span> ({{unread.drafts || 0}})</span></router-link></li>
+          <li><router-link  :to="'/email/trash'">trash<span> ({{unread.trash || 0}})</span></router-link></li>
         </ul>
       </menu>
 
@@ -54,22 +54,12 @@ export default {
     `,
   data() {
     return {
-      unread: {
-        // TODO : RUN THE FUNC ONLY ONCE
-        inbox: emailService.countUnreadInFolder()['inbox'] || 0,
-        important: emailService.countUnreadInFolder()['important'] || 0,
-        trash: emailService.countUnreadInFolder()['trash'] || 0,
-        sent: emailService.countUnreadInFolder()['sent'] || 0,
-        drafts: emailService.countUnreadInFolder()['drafts'] || 0,
-        archive: emailService.countUnreadInFolder()['archive'] || 0
-      }
-
+      unread: emailService.countUnreadInFolder(),
     }
   },
-  methods: {
+  computed: {
     getUnread() {
-      // this method will be run if there is a change from the eventBus
-      // return x = { inbox, important, trash, sent, drafts, archive } = emailService.countUnreadInFolder()
+      this.unread = mailService.countUnreadInFolder()
     }
   },
   watch: {
