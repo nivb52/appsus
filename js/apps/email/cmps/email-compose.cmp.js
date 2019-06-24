@@ -33,9 +33,9 @@ export default {
             body: ''
         }
     },
-methods: {
-    sendEmail(){
-        
-    }
-},
+    methods: {
+        sendEmail() {
+
+        }
+    },
 }

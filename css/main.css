@@ -22,7 +22,7 @@ li {
     display: flex;
 }
 
-.router-link-active {
+.menu-segment .router-link-active {
     background: #282d36;
 }
 
