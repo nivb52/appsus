@@ -3,11 +3,10 @@ import emailList from '../apps/email/cmps/email-list.cmp.js'
 import emailSidebar from '../apps/email/cmps/email-sidebar.cmp.js'
 import emailFilter from '../apps/email/cmps/email-filter.cmp.js'
 import emailCompose from '../apps/email/cmps/email-compose.cmp.js';
+import eventBusEmails from '../apps/email/cmps/eventBusEmails.cmp.js'
 
 var emails = emailService.query()
 
-/*works: 
-*/
 export default {
     name: 'email-app',
     template: `
@@ -15,17 +14,25 @@ export default {
         
         <email-sidebar></email-sidebar>
 
-        <main id="main">
+        <main id="main" >
         <div class="overlay"></div>
      <header class="header">
-     <email-compose></email-compose>  
+         
+         <button class="close-sidebar" v-show="openedSidebar"  @click="closeOnMobile"> × </button>
+         <email-filter @set-filter="setFilter"></email-filter>
+         <email-compose></email-compose>  
 
-            <email-filter @set-filter="setFilter"></email-filter>
-
-            <h1 class="page-title"><a class="sidebar-toggle-btn trigger-toggle-sidebar"><span class="line"></span><span
-            class="line"></span><span class="line"></span><span class="line line-angle1"></span><span
-            class="line line-angle2"></span></a>Inbox<a><span class="icon glyphicon glyphicon-chevron-down"></span></a>
-            </h1>
+         <h1 class="page-title">
+             <a @click="openSidebar" class="sidebar-toggle-btn trigger-toggle-sidebar">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line line-angle1"></span>
+                <span class="line line-angle2"></span>
+            </a>
+         
+         <span class="mobile-hide">Inbox</span>
+        </h1>
 
     </header>
 
@@ -41,10 +48,12 @@ export default {
             filter: null,
             emailIdx: null,
             isSelected: true,
-            selectedEmail: null
+            selectedEmail: null,
+            openedSidebar: false
         }
     },
     computed: {
+
         emailsToShow() {
             const emailLabel = this.$route.params.labels || false
             const emailFolder = this.$route.params.folder || 'inbox'
@@ -88,11 +97,14 @@ export default {
     },
     mounted() {
         console.log('email app is on');
+        const sidebar = document.querySelector('#sidebar')
+
     },
     created() {
-        // const emailFolder = this.$route.params.folder
+        eventBusEmails.$on('emailSent', () => {
+            this.emails = emailService.query()
+        })
     },
-
     methods: {
         setFilter(filter) {
             this.filter = filter.string
@@ -111,14 +123,27 @@ export default {
                     // SEARCH IN LABELS AND FOLDERS :
                     (email[currKey] === currPath || email[currKey].includes(currPath))
             })
-        }
+        },
+        openSidebar() {
+            sidebar.style.transform = "translateX(0)";
+            this.openedSidebar = true
+        },
+        closeOnMobile() {
+            if (this.openedSidebar) {
+                this.openedSidebar = false
+                sidebar.style.transform = "translateX(-100%)";
+            }
+        },
     },
 
     components: {
         emailList,
         emailSidebar,
         emailFilter,
-        emailCompose
+        emailCompose,
+        eventBusEmails
 
     },
 }
+
+

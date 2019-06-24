@@ -4,12 +4,18 @@ export default {
 
     name: 'email-details',
     template: `
-    <section>
-        <h1> DETAILS EMAIL </h1>
-        <pre>
-            {{emailDetails}}
-            
-        </pre>
+    <section class="email-details">
+       <h1> {{emailDetails.subject}} </h1>
+        <h2>
+            {{emailDetails.from}}
+      </h2>
+        <h3>
+            {{emailDetails.sentAt}}
+       </h3>
+        <p>
+            {{emailDetails.body}}
+       </p>
+           
 </section>
 
      `,

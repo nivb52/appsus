@@ -1,5 +1,4 @@
 import { emailService } from '../emailservices/email.service.js'
-import emailCompose from './email-compose.cmp.js'
 import eventBusEmails from './eventBusEmails.cmp.js'
 
 
@@ -84,7 +83,6 @@ export default {
 
   },
   components: {
-    emailCompose,
     eventBusEmails
   }
 

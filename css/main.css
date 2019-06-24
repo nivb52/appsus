@@ -1,25 +1,54 @@
 /* Components CSS */
 
 @import './about-us.css';
+/*base */
+
 a {
     color: #020302;
 }
 
-.search-box {
-    top: 12px;
+li {
+    display: flex;
 }
 
-.circle-avatar {
-    border-radius: 50%;
-    height: 35px;
-}
+/*helper*/
 
 .flex {
     display: flex;
 }
 
-li {
-    display: flex;
+.margin-bottom {
+    margin-bottom: 50px;
+}
+
+/*  Header  */
+
+.main-nav {
+    text-align: center;
+    /* font-weight: 600; */
+    padding: 10px 20px;
+}
+
+/*class*/
+
+.title {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.search-box {
+    top: 42px;
+}
+
+.compose-button {
+    margin-top: 42px;
+    margin-right: 100px;
+}
+
+.circle-avatar {
+    border-radius: 50%;
+    height: 35px;
 }
 
 .menu-segment .router-link-active {
@@ -33,4 +62,9 @@ li {
     left: 50%;
     background-color: white;
     z-index: 5;
+}
+
+.new-email textarea {
+    height: 300px;
+    width: 500px;
 }

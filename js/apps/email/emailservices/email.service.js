@@ -5,12 +5,14 @@
 
 import { storageService } from '../../../services/storage.service.js'
 import { utilService } from '../../../services/util.service.js'
+import emailListCmp from '../cmps/email-list.cmp.js';
 
 export const emailService = {
     query,
     queryId,
     countUnreadInFolder,
-    updateKey
+    updateKey,
+    updateEmails
 }
 const EMAIL_KEY = 'emails'
 const FOLDER_OPS = ['sent', 'drafts', 'important', 'archive']
@@ -415,7 +417,21 @@ function _getCorrectKey(key) {
     }
 }
 
+function updateEmails(email) {
+    let emails = storageService.load(EMAIL_KEY)
+    email.id = utilService.makeId()
+    email.folder = 'sent'
+    email.from = 'me'
 
+    email.sentAt = new Date
+    email.sentAt = email.sentAt.toDateString()
+
+    email.isRead = true
+    email.isTrash = false
+    email.avatar = '../../../../img/yaron.jpg'
+    emails.push(email)
+    storageService.store(EMAIL_KEY, emails)
+}
 
 
 

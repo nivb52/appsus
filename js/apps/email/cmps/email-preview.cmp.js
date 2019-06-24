@@ -14,7 +14,6 @@ export default {
               
               
             </div>
-            <div class="separator"></div>
           </router-link>
           </li>
 
@@ -25,6 +24,7 @@ export default {
 
   },
   computed: {
+
     emailSubject() {
       const longBodySign = this.email.subject.charAt(50) !== '' ? '...' : ''
       return this.email.subject.substring(0, 50) + longBodySign

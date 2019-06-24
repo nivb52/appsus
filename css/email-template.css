@@ -146,7 +146,7 @@ a:hover {
 
 .compose-button {
   border-radius: 100px;
-  padding: 13px 20px;
+  padding: 7px 20px;
   text-align: center;
   font-weight: 500;
   text-transform: uppercase;
@@ -155,7 +155,8 @@ a:hover {
   display: block;
   margin: 0 50px 30px 50px;
   cursor: pointer;
-  max-width: 100px;
+  max-width: 125px;
+  float: right
 }
 
 .compose-button:hover {
@@ -263,7 +264,7 @@ a:hover {
 
 #main {
   position: fixed;
-  top: 0;
+  top: 20px;
   left: 300px;
   bottom: 0;
   right: 0;
@@ -813,6 +814,9 @@ a:hover {
   #main .message-list li .col-2 .date {
     display: none;
   }
+  #main .message-list li .col-2 .subject {
+    right: 2px;
+  }
 }
 
 @media only screen and (max-width: 600px) {
@@ -852,11 +856,22 @@ a:hover {
     position: static;
     visibility: hidden;
   }
+  #main .message-list li .col-2 .subject {
+    right: 2px;
+  }
+  .mobile-hide {
+    visibility: hidden;
+  }
 }
 
 /**
  * Nano scroll stuff
 */
+
+.close-sidebar {
+  /* float: right; */
+  margin-left: 300px;
+}
 
 .nano {
   position: relative;

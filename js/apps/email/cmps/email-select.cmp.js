@@ -8,7 +8,7 @@ export default {
     
     <div >
         <img  v-show="!isActions" class="circle-avatar" :src="email.avatar" @click="isActions = !isActions"/>
-        <span v-show="!isActions" class="title">{{email.from}}</span>
+        <span v-show="!isActions" class="title">{{emailFrom}}</span>
 
         <div class="col col-1" v-show="isActions">
             <input type="checkbox" id="chk1">
@@ -57,7 +57,11 @@ export default {
             // IF NOT READ : 
             if (!this.email.isRead) return "glyphicon glyphicon-eye-open"
             return "glyphicon glyphicon-eye-close" // or use : glyphicon-envelope
-        }
+        },
+        emailFrom() {
+            const longBodySign = this.email.subject.charAt(20) !== '' ? '...' : ''
+            return this.email.from.substring(0, 20) + longBodySign
+        },
 
     },
     components: {

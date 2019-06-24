@@ -8,8 +8,8 @@ export default {
     <div id="main-nano-wrapper" class="nano">
       <div class="nano-content">
           
-        <ul class="message-list">
-          <email-preview v-for="email in emails" :key="email.id" :email="email" ></email-preview>
+        <ul class="message-list" >
+          <email-preview v-for="email in emails"  :key="email.id" :email="email" ></email-preview>
         </ul>
 
      </div>
@@ -19,15 +19,9 @@ export default {
 
     `,
     props: ['emails'],
-    data() {
-        return {
-
-        }
-    },
-    mounted() {
-
-    },
     components: {
         emailPreview,
-    }
+    },
 }
+
+
