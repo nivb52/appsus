@@ -144,7 +144,7 @@ a:hover {
   color: #61C7B3;
 }
 
-#sidebar .compose-button {
+.compose-button {
   border-radius: 100px;
   padding: 13px 20px;
   text-align: center;
@@ -155,9 +155,10 @@ a:hover {
   display: block;
   margin: 0 50px 30px 50px;
   cursor: pointer;
+  max-width: 100px;
 }
 
-#sidebar .compose-button:hover {
+.compose-button:hover {
   color: #ABB4BE;
   border-color: #ABB4BE;
 }
@@ -839,7 +840,7 @@ a:hover {
     bottom: 0;
     left: 0;
     right: 120px;
-    width: auto;
+    /* max-width: 100px; */
   }
   #main .message-list li .col-2 {
     right: 0;
@@ -850,9 +851,6 @@ a:hover {
     padding-left: 0;
     position: static;
     visibility: hidden;
-  }
-  #main .message-list li .col-2 .subject {
-    display: none;
   }
 }
 

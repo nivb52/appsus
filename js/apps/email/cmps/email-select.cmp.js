@@ -4,19 +4,28 @@ import eventBusEmails from './eventBusEmails.cmp.js'
 export default {
     name: 'email-select',
     template: `
+
+    
     <div>
-        <input type="checkbox" id="chk1">
-        <label for="chk1" class="toggle"></label>
-        
-        <span @click="onRead" :class=iconIsRead></span>
-        <span @click="onTrash" class="glyphicon glyphicon-trash"></span>
-        <span @click="onStar" class="star-toggle glyphicon glyphicon-star-empty">
-            </span>
+        <img class="circle-avatar" :src="email.avatar" @click="isActions = !isActions"/>
+        <div v-show="isActions">
+            <input type="checkbox" id="chk1">
+            <label for="chk1" class="toggle"></label>
+            
+            <span @click="onRead" :class=iconIsRead></span>
+            <span @click="onTrash" class="glyphicon glyphicon-trash"></span>
+            <span @click="onStar" class="star-toggle glyphicon glyphicon-star-empty"></span>
             <span class="title">{{email.from}}</span>
+        </div>
     </div>
     
     
     `,
+    data() {
+        return {
+            isActions: false
+        }
+    },
     props: ['email'],
     methods: {
         onTrash() {

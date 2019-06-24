@@ -14,7 +14,7 @@ export const emailService = {
 }
 const EMAIL_KEY = 'emails'
 const FOLDER_OPS = ['sent', 'drafts', 'important', 'archive']
-
+const IMG_NUMBER = 15
 var emailsDB = [
     {
         "id": "O2e2G8w0skc",
@@ -472,6 +472,7 @@ function _addNewFeatures(emails) {
         email.isTrash = false;
         email.isImportant = Math.random() > 0.75 ? true : false;
         email.sentAt = _randomDate(new Date(2019, 1, 1), new Date(2019, 4, 4));
+        email.avatar = '../../../../img/' + Math.floor(Math.random() * IMG_NUMBER) + '.jpg'
     })
 }
 

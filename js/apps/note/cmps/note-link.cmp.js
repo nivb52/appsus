@@ -31,5 +31,3 @@ export default {
         // validUrl,
     },
 }
-
-// function fixUrl(urlStr) {

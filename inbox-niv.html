@@ -144,8 +144,12 @@
     <style>
         .flex {
             display: flex;
-            flex-direction: row;
             flex-wrap: wrap;
+        }
+
+        .rows {
+
+            flex-direction: row;
         }
 
         .green {
@@ -163,22 +167,37 @@
         .purple {
             background-color: purple
         }
-        .avatar {
-            
+
+        .list-item {
+            display: inline-flex;
+
         }
+
+        .avatar {}
     </style>
 </head>
 
 <body>
     <div class="flex container">
+        <div class="list-item ">
 
-        <div class="flex">
             <div class="avatar">Pic</div>
-            <div class="green">NAME</div>
-            <div class="red">title</div>
+
+            <div class="red ">NAME</div>
+            <div class="green">title</div>
             <div class="blue">subject</div>
             <div class="purple">18:00 am</div>
         </div>
+        <div class="list-item">
+
+            <div class="avatar">Pic</div>
+
+            <div class="red">NAME</div>
+            <div class="green">title</div>
+            <div class="blue">subject</div>
+            <div class="purple">18:00 am</div>
+        </div>
+    </div>
     </div>
 
 </body>

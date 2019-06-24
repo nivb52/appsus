@@ -9,12 +9,12 @@ export default {
          <router-link  :to="'/email/m/' + email.id"  :email="email" >
       
            <div class="col col-2">
-         <div class="title">{{emailSubject}}</span></div>
-         <div class="subject">{{emailBody}}</span></div>
+         <div class="subject"> <span>{{emailSubject}} - </span> {{emailBody}}</span></div>
          <div class="date">{{emailDate}}</div>
               
               
             </div>
+            <div class="separator"></div>
           </router-link>
           </li>
 

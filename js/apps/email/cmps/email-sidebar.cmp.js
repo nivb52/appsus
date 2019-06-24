@@ -9,15 +9,12 @@ export default {
     
     <aside id="sidebar" class="nano">
     <div class="nano-content">
-      <div class="logo-container"><span class="logo glyphicon glyphicon-envelope"></span>Mail</div><a
-        class="compose-button" @click="isCompose = !isCompose" >Compose</a>
-        <email-compose v-show="isCompose"></email-compose>
-
+      <div class="logo-container"><span class="logo glyphicon glyphicon-envelope"></span>Mail</div>
 
 
       <menu class="menu-segment">
         <ul>
-          <li class="active"> <router-link  :to="'/email'"> Inbox<span> ({{unread.inbox || 0}})</span></router-link></li>
+          <li> <router-link exact :to="'/email'"> Inbox<span> ({{unread.inbox || 0}})</span></router-link></li>
           <li><router-link  :to="'/email/important'"> Important<span> ({{unread.important || 0}})</span></router-link></li>
           <li><router-link  :to="'/email/sent'">sent<span> ({{unread.sent || 0}})</span></router-link></li>
           <li><router-link  :to="'/email/drafts'">drafts<span> ({{unread.drafts || 0}})</span></router-link></li>
@@ -30,15 +27,15 @@ export default {
       <div class="menu-segment">
         <ul class="labels">
           <li class="title">Labels <span class="icon">+</span></li>
-          <li><router-link :to="'/email/l/marketing'"> Marketing <span class="ball pink"></span></router-link></li>
-          <li><router-link :to="'/email/l/work'"> Work <span class="ball green"></span></router-link></li>
-          <li><router-link :to="'/email/l/bills'" >Bills <span class="ball blue"></span></router-link></li>
-          <li><router-link :to="'/email/l/google'" >Google <span class="ball "></span></router-link></li>
-          <li><router-link :to="'/email/l/social'" >Social <span class="ball green"></span></router-link></li>
-          <li><router-link :to="'/email/l/toread'" >לקרוא <span class="ball blue"></span></router-link></li>
-          <li><router-link :to="'/email/l/pictures'" >תמונות <span class="ball pink"></span></router-link></li>
-          <li><router-link :to="'/email/l/meetings'" >Meetings <span class="ball green"></span></router-link></li>
-          <li><router-link :to="'/email/l/diggers'" >החופרים <span class="ball"></span></router-link></li>
+          <li><router-link :to="'/email/l/marketing'"><span class="ball pink"></span> Marketing &nbsp;</router-link></li>
+          <li><router-link :to="'/email/l/work'"><span class="ball green"></span> Work    &nbsp; </router-link></li>
+          <li><router-link :to="'/email/l/bills'" ><span class="ball blue"></span> Bills  &nbsp;  </router-link></li>
+          <li><router-link :to="'/email/l/google'" ><span class="ball red"></span> Google &nbsp;</router-link></li>
+          <li><router-link :to="'/email/l/social'" ><span class="ball green"></span> Social  &nbsp; </router-link></li>
+          <li><router-link :to="'/email/l/toread'" ><span class="ball blue"></span> לקרוא &nbsp;</router-link></li>
+          <li><router-link :to="'/email/l/pictures'" ><span class="ball pink"></span> תמונות &nbsp;</router-link></li>
+          <li><router-link :to="'/email/l/meetings'" ><span class="ball green"></span> Meeting &nbsp;</router-link></li>
+          <li><router-link :to="'/email/l/diggers'" ><span class="ball red"></span> Dribble &nbsp; </router-link></li>
         </ul>
       </div>
       <div class="separator"></div>
@@ -61,8 +58,6 @@ export default {
   data() {
     return {
       unread: emailService.countUnreadInFolder(),
-      isCompose: false,
-
     }
   },
   methods: {

@@ -1,3 +1,36 @@
 /* Components CSS */
 
-@import './about-us.css'
+@import './about-us.css';
+a {
+    color: #020302;
+}
+
+.search-box {
+    top: 39px;
+}
+
+.circle-avatar {
+    border-radius: 50%;
+    height: 35px;
+}
+
+.flex {
+    display: flex;
+}
+
+li {
+    display: flex;
+}
+
+.router-link-active {
+    background: #282d36;
+}
+
+.new-email {
+    position: fixed;
+    margin: 0 auto;
+    bottom: 0;
+    left: 50%;
+    background-color: white;
+    z-index: 5;
+}
