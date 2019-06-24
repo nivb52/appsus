@@ -7,16 +7,16 @@ export default {
 
     
     <div >
-        <img  v-show="!isActions" class="circle-avatar" :src="email.avatar" @click="isActions = !isActions"/>
+        <img  v-show="!isActions" class="circle-avatar actions" :src="email.avatar" @click="isActions = !isActions"/>
         <span v-show="!isActions" class="title">{{emailFrom}}</span>
 
-        <div class="col col-1" v-show="isActions">
-            <input type="checkbox" id="chk1">
-            <label for="chk1" class="toggle"></label>
-            
+        <div class="col col-1 actions" v-show="isActions" id="icons">
+            <span @click="isActions = !isActions">👈</span>
             <span @click="onRead" :class=iconIsRead></span>
-            <span @click="onTrash" class="glyphicon glyphicon-trash"></span>
-            <span @click="onStar" class="star-toggle glyphicon glyphicon-star-empty"></span>
+            <span @click="onTrash">🗑</span>
+            <span @click="onStar" >☆</span>
+            <!--  -->
+            <!-- star-toggle glyphicon glyphicon-star-empty -->
         </div>
     </div>
     

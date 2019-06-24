@@ -31,6 +31,14 @@ li {
 
 /*class*/
 
+#icons {
+    font-size: 2rem;
+}
+
+.actions {
+    margin-left: 5%;
+}
+
 .title {
     text-overflow: ellipsis;
     overflow: hidden;
