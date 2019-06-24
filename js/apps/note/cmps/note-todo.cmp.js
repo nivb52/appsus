@@ -22,13 +22,13 @@ export default {
     data() {
         return {
             notes: noteService.query(),
-            newNote: noteService.getEmptyNote()
+            newNote: noteService.getEmptyTodo()
         }
     },
     methods: {
         addNote() {
             noteService.add(this.newNote);
-            this.newNote = noteService.getEmptyNote();
+            this.newNote = noteService.getEmptyTodo();
             console.log(this.notes);
         },
         deleteTodo(todoIdx) {
