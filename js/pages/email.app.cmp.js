@@ -2,9 +2,7 @@ import { emailService } from '../apps/email/emailservices/email.service.js'
 import emailList from '../apps/email/cmps/email-list.cmp.js'
 import emailSidebar from '../apps/email/cmps/email-sidebar.cmp.js'
 import emailFilter from '../apps/email/cmps/email-filter.cmp.js'
-// import emailSelect from '../apps/email/cmps/email-select.cmp.js'
-// import emailDetails from '../cmps/email-details.cmp.js';
-// import eventBus from '../cmps/email-bus.cmp.js';
+import emailCompose from '../apps/email/cmps/email-compose.cmp.js';
 
 var emails = emailService.query()
 
@@ -20,7 +18,8 @@ export default {
         <main id="main">
         <div class="overlay"></div>
      <header class="header">
-             
+     <email-compose></email-compose>  
+
             <email-filter @set-filter="setFilter"></email-filter>
 
             <h1 class="page-title"><a class="sidebar-toggle-btn trigger-toggle-sidebar"><span class="line"></span><span
@@ -50,10 +49,6 @@ export default {
             const emailLabel = this.$route.params.labels || false
             const emailFolder = this.$route.params.folder || 'inbox'
 
-            // advance user search option: 
-            if (emailFolder === 'read') this.filter = '@read'
-            if (emailFolder === 'unread') this.filter = '@unread'
-
             if (emailLabel) {
                 // look on label by url-params
                 if (!this.filter && emailLabel) return this.emails.filter(email => {
@@ -61,18 +56,24 @@ export default {
                 })
             }
 
-
             // look on folder  by url-params
             if (!this.filter && emailFolder) return this.emails.filter(email => {
                 return email.folder === emailFolder
             })
 
-            // simple show/no-show of read unread by search @read
-            if (this.filter === '@read' || this.filter === '@unread') return this.emails.filter(email => { return email.isRead === false })
 
+            // advance user search option: 
+            if (emailFolder === 'read') this.filter = '@read'
+            if (emailFolder === 'unread') this.filter = '@unread'
+
+            // simple show/no-show of read unread by search @read
+            if (this.filter === '@read') return this.emails.filter(email => { return email.isRead === false })
+            if (this.filter === '@unread') return this.emails.filter(email => { return email.isRead === true })
+
+            // ###########################
+            //SEARCH IN LABELS OR FOLDERS : 
             const currPath = emailLabel || emailFolder
             const currKey = emailLabel ? 'labels' : 'folder'
-
 
             const searchParshe = this.filter.trim().toLowerCase().split(' ')
 
@@ -117,9 +118,7 @@ export default {
         emailList,
         emailSidebar,
         emailFilter,
-        // emailSelect,
-        // emailDetails,
-        // eventBus
+        emailCompose
 
     },
 }
