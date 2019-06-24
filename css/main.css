@@ -6,7 +6,7 @@ a {
 }
 
 .search-box {
-    top: 39px;
+    top: 12px;
 }
 
 .circle-avatar {
@@ -22,7 +22,7 @@ li {
     display: flex;
 }
 
-.router-link-active {
+.menu-segment .router-link-active {
     background: #282d36;
 }
 

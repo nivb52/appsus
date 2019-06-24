@@ -6,16 +6,17 @@ export default {
     template: `
 
     
-    <div>
-        <img class="circle-avatar" :src="email.avatar" @click="isActions = !isActions"/>
-        <div v-show="isActions">
+    <div >
+        <img  v-show="!isActions" class="circle-avatar" :src="email.avatar" @click="isActions = !isActions"/>
+        <span v-show="!isActions" class="title">{{email.from}}</span>
+
+        <div class="col col-1" v-show="isActions">
             <input type="checkbox" id="chk1">
             <label for="chk1" class="toggle"></label>
             
             <span @click="onRead" :class=iconIsRead></span>
             <span @click="onTrash" class="glyphicon glyphicon-trash"></span>
             <span @click="onStar" class="star-toggle glyphicon glyphicon-star-empty"></span>
-            <span class="title">{{email.from}}</span>
         </div>
     </div>
     
