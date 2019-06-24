@@ -26,3 +26,19 @@
     width: 50%;
     border-radius: 10px;
 }
+
+.note-container {
+    /* display: flex; */
+    /* justify-content: space-between; */
+    background-color: gray;
+    max-width: 28%;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+    border-radius: 20px;
+}
+
+.notes-container {
+    display: flex;
+    justify-content: space-evenly;
+}

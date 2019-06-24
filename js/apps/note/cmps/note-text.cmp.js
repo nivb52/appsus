@@ -7,19 +7,19 @@ export default {
     <section class="note-text">
         <div>
             <textarea type="text" placeholder="Note something" v-model="noteTxt" @keyup.enter="addTxtNote"> </textarea>
-            
-</div>
+      </div>
     </section>
 
     `,
+    props: ['note'],
     data() {
         return {
-            noteTxt: null,
+            noteTxt: this.note.txt,
         }
     },
     methods: {
         addTxtNote() {
-            var newNote = noteService.getEmptyNote(this.noteTxt)
+            // var newNote = noteService.getEmptyNote(this.noteTxt)
             console.log(newNote, 'newNote');
 
             // noteService.addTxt(this.newNote);

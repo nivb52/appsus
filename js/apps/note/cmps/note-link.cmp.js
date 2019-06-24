@@ -5,7 +5,7 @@ export default {
     name: 'note-link',
     template: `
     <section class="note-link">
-        <h1> Welcome to note link</h1>    
+        <span> note link</span>    
         <input type="text" placeholder="Search for video" v-model="searchUrl"  @keyup.enter="searchVid" />
         {{searchUrl}}
         <iframe width="210" height="170" src="https://www.youtube.com/embed/tgbNymZ7vqY">

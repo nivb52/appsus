@@ -2,7 +2,7 @@ export default {
     name: 'note-img',
     template: `
     <section class="note-img">
-        <h1> Welcome to note img</h1>    
+        <span> note img</span>    
         <input type="file"  @change="fileSelected" />
         <div class="preview"> 
             <img v-if="url" :src="url"/>

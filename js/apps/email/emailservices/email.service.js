@@ -5,7 +5,6 @@
 
 import { storageService } from '../../../services/storage.service.js'
 import { utilService } from '../../../services/util.service.js'
-import emailListCmp from '../cmps/email-list.cmp.js';
 
 export const emailService = {
     query,

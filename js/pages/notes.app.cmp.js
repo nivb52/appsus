@@ -1,8 +1,8 @@
 import noteService from '../apps/note/noteservices/note.service.js'
-import noteText from '../apps/note/cmps/note-text.cmp.js'
-import noteTodo from '../apps/note/cmps/note-todo.cmp.js'
-import noteImg from '../apps/note/cmps/note-img.cmp.js'
-import noteLink from '../apps/note/cmps/note-link.cmp.js'
+import noteMain from '../apps/note/cmps/note-main.cmp.js'
+// import noteTodo from '../apps/note/cmps/note-todo.cmp.js'
+// import noteImg from '../apps/note/cmps/note-img.cmp.js'
+// import noteLink from '../apps/note/cmps/note-link.cmp.js'
 
 
 export default {
@@ -10,13 +10,17 @@ export default {
     template: `
     <section class="notes-app">
         <h1> Welcome to notes App!</h1> 
-        <note-text></note-text>
-        <note-todo></note-todo>
-        <note-img></note-img>
-        <!-- <note-link></note-link> -->
+        <h2> if you won't write it you will forget it</h2>
+
+        <div class="notes-container">
+             <note-main v-for="note in notes"  :key="note.id" :note="note" ></note-main>
+        
+        </div>
+       
     </section>
 
     `,
+    // props: ['notes'],
     data() {
         return {
             notes: noteService.query(),
@@ -35,9 +39,6 @@ export default {
         },
     },
     components: {
-        noteText,
-        noteTodo,
-        noteImg,
-        noteLink,
+        noteMain,
     }
 }

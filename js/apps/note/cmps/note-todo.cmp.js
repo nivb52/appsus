@@ -21,7 +21,7 @@ export default {
     `,
     data() {
         return {
-            notes: noteService.query(),
+            notes: noteService.queryTodos(),
             newNote: noteService.getEmptyTodo()
         }
     },
