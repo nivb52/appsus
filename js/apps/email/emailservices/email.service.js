@@ -488,7 +488,7 @@ function _addNewFeatures(emails) {
         email.isTrash = false;
         email.isImportant = Math.random() > 0.75 ? true : false;
         email.sentAt = _randomDate(new Date(2019, 1, 1), new Date(2019, 4, 4));
-        email.avatar = '../../../../img/' + Math.floor(Math.random() * IMG_NUMBER) + '.jpg'
+        email.avatar = '/img/' + Math.floor(Math.random() * IMG_NUMBER) + '.jpg'
     })
 }
 
