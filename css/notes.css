@@ -32,6 +32,7 @@
     /* justify-content: space-between; */
     background-color: gray;
     max-width: 28%;
+    /* min-width: 300px; */
     border-style: solid;
     border-width: 1px;
     border-color: black;
@@ -41,4 +42,5 @@
 .notes-container {
     display: flex;
     justify-content: space-evenly;
+    max-width: 960px;
 }

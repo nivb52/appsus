@@ -5,13 +5,17 @@ export default {
     name: 'noteTodo',
     template: `
     <section class="note-todo">
-                <div>
-                <textarea type="text" placeholder="What todo?" v-model="newNote.txt" @keyup.enter="addNote"> </textarea>
+        <span>todo </span>
+        <h1>todo</h1>
+        <div>
+          <textarea type="text" placeholder="What todo?" v-model="newNote" @keyup.enter="addNote"> </textarea>
         </div>
+
         <ul class="numbered-todo-list">
-            <li v-for="(note, i) in notes">
-                    {{i+1}}. {{note.txt}} (Priority: {{note.priority}})
-                    <button class="delete-todo-btn" @click.stop="deleteTodo(i)">x</button>
+            <li v-for="(todo, i) in todos">
+            <!-- there is a problem we probably need to change note.todos to be an array   -->
+                    {{i+1}}. {{todo.txt}} (Priority: {{todo.priority}})
+                    <button class="delete-todo-btn" @click.stop="onDeleteTodo(note.id,i)">x</button>
             </li>
         </ul>
 
@@ -19,21 +23,20 @@ export default {
     </section>
 
     `,
+    props: ['todos'],
     data() {
         return {
-            notes: noteService.queryTodos(),
-            newNote: noteService.getEmptyTodo()
+            // todo1: this.todos,
+            // todo: this.note.todos,
+            newNote: ''
         }
     },
     methods: {
-        addNote() {
-            noteService.add(this.newNote);
-            this.newNote = noteService.getEmptyTodo();
-            console.log(this.notes);
+        addTodo() {
+            noteService.onAddTodo(this.newNote);
         },
-        deleteTodo(todoIdx) {
-            // console.log('Ev', ev);
-            this.notes.splice(todoIdx, 1)
+        onDeleteTodo(noteIdx, todoIdx) {
+            noteService.deleteTodo(noteIdx, todoIdx)
         },
     }
 }

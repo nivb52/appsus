@@ -10,9 +10,10 @@ export default {
 </form> 
     </section>
     `,
+    props: ['note'],
     data() {
         return {
-            url: null,
+            url: this.note.img || '',
         }
     },
     methods: {

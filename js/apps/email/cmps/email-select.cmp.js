@@ -8,7 +8,7 @@ export default {
     
     <div >
         <img  v-show="!isActions" class="circle-avatar actions" :src="email.avatar" @click="isActions = !isActions"/>
-        <span v-show="!isActions" class="title">{{emailFrom}}</span>
+        <span v-show="!isActions"  @click="isActions = !isActions" class="title">{{emailFrom}}</span>
 
         <div class="col col-1 actions" v-show="isActions" id="icons">
             <span @click="isActions = !isActions">👈</span>

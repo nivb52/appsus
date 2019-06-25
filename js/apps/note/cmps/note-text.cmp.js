@@ -5,16 +5,16 @@ export default {
     name: 'noteText',
     template: `
     <section class="note-text">
-        <div>
+        <!-- <div> -->
             <textarea type="text" placeholder="Note something" v-model="noteTxt" @keyup.enter="addTxtNote"> </textarea>
-      </div>
+      <!-- </div> -->
     </section>
 
     `,
     props: ['note'],
     data() {
         return {
-            noteTxt: this.note.txt,
+            noteTxt: this.note ? this.note.txt : ' ',
         }
     },
     methods: {
