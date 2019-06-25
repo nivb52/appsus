@@ -147,7 +147,7 @@ const notesDB =
         isTodo: false,
         video: `https://www.youtube.com/embed/ynG6tkLO3SQ`,
         isVideo: true,
-        img: '../../../../img/1.jpg',
+        img: '../img/1.jpg',
         isImg: true,
         color: 'white',
         bgc: 'black',

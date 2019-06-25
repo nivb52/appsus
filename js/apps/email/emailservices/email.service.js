@@ -428,7 +428,7 @@ function updateEmails(email) {
 
     email.isRead = true
     email.isTrash = false
-    email.avatar = '../../../../img/yaron.jpg'
+    email.avatar = '/img/yaron.jpg'
     emails.push(email)
     storageService.store(EMAIL_KEY, emails)
 }
